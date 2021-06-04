@@ -1,0 +1,144 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.Joe, .ruvim, .tammi{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Joe {
+    background-image: url('../Hiketunez/Assets/Images/pexels-joe-kritz-1616173.jpeg');
+    min-height: 100%;
+}
+.ruvim {
+    background-image: url('../Hiketunez/Assets/Images/pexels-ruvim-miksanskiy-1582836.jpeg');
+    min-height: 400px;
+}
+.tammi {
+    background-image: url('../Hiketunez/Assets/Images/pexels-tammi-nowack-1559708.jpeg');
+    min-height: 400px;
+}
+
+.sec1{
+ text-align: center;
+ padding: 50px 80px;   
+}
+
+.sec1-light{
+  background-color: #f4f4f4;
+  color: #666;  
+}
+
+.sec1-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.jtext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.jtext .boarder{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+.jtext .boarder.o-block{
+    background-color: transparent;
+}
+
+@media(max-width:568px){
+    .Joe, .ruvim, .tammi{
+        background-attachment: scroll;
+    }
+}
+
+
+.col {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+.containerBtn { 
+    background: #697272; 
+    text-align: center;
+    width:256px;
+    height:64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/*
+ BUTTON STYLING
+*/
+
+.btn {
+    font-family: "lato", sans-serif;
+    position: relative;
+    color: white;
+    width: 254px;
+    height: 63px;
+    line-height: 64px;
+    transition: all 0.3s;
+  }
+  
+  
+  .btn::before, .btn::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+/* BTN FOUR */
+
+.btn-four:hover span {
+    transform: scale(1.2, 1.2);
+  }
+  
+  .btn-four::before {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.1, 0.1);
+  }
+  
+  .btn-four:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+  
+  .btn-four::after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  
+  .btn-four:hover::after {
+    transform: scale(0, 0);
+    opacity: 0;
+  }
+
+  /* REF for button animation https://codepen.io/CTNieves/pen/pbLGZW */
