@@ -18,15 +18,15 @@ body, html{
 }
 
 .Joe {
-    background-image: url('../Hiketunez/Assets/Images/pexels-joe-kritz-1616173.jpeg');
+    background-image: url('../Images/pexels-joe-kritz-1616173.jpeg');
     min-height: 100%;
 }
 .ruvim {
-    background-image: url('../Hiketunez/Assets/Images/pexels-ruvim-miksanskiy-1582836.jpeg');
+    background-image: url('../Images/pexels-ruvim-miksanskiy-1582836.jpeg');
     min-height: 400px;
 }
 .tammi {
-    background-image: url('../Hiketunez/Assets/Images/pexels-tammi-nowack-1559708.jpeg');
+    background-image: url('../Images/pexels-tammi-nowack-1559708.jpeg');
     min-height: 400px;
 }
 
