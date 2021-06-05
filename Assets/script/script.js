@@ -1,8 +1,14 @@
-
+// Button Variables
 var searchBtn = document.querySelector('#searchBtn');
 var userInput = document.querySelector('#userInput');
 var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
+var saveHikeBtn = document.querySelector('saveHikeBtn');
+// Modal Variables
+var modalCard = document.querySelector('.modal-card');
+var modalTitle = document.querySelector('.card-title');
+var cardInfo = document.querySelector('card-info');
+
 
 // Location search
 
@@ -13,7 +19,7 @@ searchBtn.addEventListener('click', function () {
 
 
     // Fetch data from apis to show on map
-    function hikeInfo (){
+    function test (hikeInfo) {
         fetch('link map api', {
             method: 'GET',
         })
@@ -39,8 +45,7 @@ playMusicBtn.addEventListener('click', function () {
         // add in what we really want it to do with the data
         console.log(data)
 });
-});
-});
+
 
 // Link hiking info to song data
 
@@ -53,3 +58,12 @@ playMusicBtn.addEventListener('click', function () {
 // Event listener for favorite hikes button
 
 // Page for favorite hikes
+
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+};
