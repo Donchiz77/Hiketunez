@@ -66,11 +66,45 @@ body, html{
     width:100px;
     height: 30px;
     margin-left: 5px;
+    border-radius: 15px;
 }
 
 #favoritesBtn {
     width: 100px;
     height: 30px;
     margin-left: 5px;
+    border-radius: 15px;
+}
+
+.modal-card {
+    background-color: #f4f4f4;
+     height: 400px;
+     width: 400px;
+     display:flex;
+}
+
+.card-title {
+    font-size: 30px;
+    font-family: "lato", sans-serif;
+}
+
+.card-info {
+    font-size: 15px;
+    font-family: "lato", sans-serif;
+}
+
+#playMusicBtn {
+    border-radius: 15px;
+    float: left;
+    margin-top: 365px;
+    margin-left: 10px;
+    
+}
+
+#saveHikeBtn {
+    border-radius: 15px;
+    float: right;
+    margin-top: 365px;
+    margin-left: 225px;
 }
 
