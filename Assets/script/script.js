@@ -13,29 +13,33 @@ var cardInfo = document.querySelector('card-info');
 // Location search
 
 // Event listener for search for location
-searchBtn.addEventListener('click', function () {
-    hikeInfo(userInput.value.trim());
-    console.log(value); 
+// searchBtn.addEventListener('click', function () {
+    
+//     hikeInfo(userInput.value.trim());
+//     console.log(value); 
 
 
-    // Fetch data from apis to show on map
-    function test (hikeInfo) {
-        fetch('link map api', {
-            method: 'GET',
-        })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                // add in what we really want it to do with the data
-                console.log(data)
-        });
+//     // Fetch data from apis to show on map
+//     developer.nps.gov/api/v1/places
+//     function test (hikeInfo) {
+//         fetch('https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=M0Bd4k4wGIILywauG2LxueJtOIgJjtc8nBrEF7Jd', {
+//         })
+//             .then(function (response) {
+//                 return response.json();
+//             })
+//             .then(function (data) {
+//                 // add in what we really want it to do with the data
+//                 console.log(data)
+//         });
 
-};
+//     };
+// });    
+
+  
 
 // Fetch song data
 playMusicBtn.addEventListener('click', function () {
-    fetch('https://openwhyd.org/adrien/playlist/61', {
+    fetch('https://openwhyd.org/yvad/playlist/5', {
     method: 'GET',
 })
     .then(function (response) {
@@ -44,6 +48,7 @@ playMusicBtn.addEventListener('click', function () {
     .then(function (data) {
         // add in what we really want it to do with the data
         console.log(data)
+});
 });
 
 
@@ -59,11 +64,3 @@ playMusicBtn.addEventListener('click', function () {
 
 // Page for favorite hikes
 
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-};
