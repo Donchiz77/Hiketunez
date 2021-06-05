@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=!, initial-scale=1.0">
+    <title>hikeTunezLocator</title>
+    <link rel="stylesheet" href="Assets/CSS/location.css">
+</head>
+<body>
+    <header class="jtext sec1 sec1-light boarder">HIKETUNEZ</header>
+
+    <section class="search">
+        <div class="locator">
+            <input id="userInput" placeholder="    Enter a city...">
+            <button id="searchBtn" style="font-family: Lato">Go!</button>
+            <button id="favoritesBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="icon">
+            <div class="modal card">
+                <div class="card-title">
+                    <div class="card-info">
+                        <button class="playMusicBtn" style="font-family: Lato">Soundtrack</button>
+                        <button class="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Save Hike</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="Assets/script.js"></script>
+</body>
+</html>
