@@ -13,7 +13,7 @@ searchBtn.addEventListener('click', function () {
 
 
     // Fetch data from apis to show on map
-    function (hikeInfo) {
+    function hikeInfo (){
         fetch('link map api', {
             method: 'GET',
         })
@@ -39,7 +39,8 @@ playMusicBtn.addEventListener('click', function () {
         // add in what we really want it to do with the data
         console.log(data)
 });
-
+});
+});
 
 // Link hiking info to song data
 
