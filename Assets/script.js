@@ -1,8 +1,14 @@
-
+// Button Variables
 var searchBtn = document.querySelector('#searchBtn');
 var userInput = document.querySelector('#userInput');
 var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
+var saveHikeBtn = document.querySelector('saveHikeBtn');
+// Modal Variables
+var modalCard = document.querySelector('.modal-card');
+var modalTitle = document.querySelector('.card-title');
+var cardInfo = document.querySelector('card-info');
+
 
 // Location search
 
