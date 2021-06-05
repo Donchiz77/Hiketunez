@@ -10,6 +10,8 @@
 <body>
     <header class="jtext sec1 sec1-light boarder">HIKETUNEZ</header>
 
+    <div id="map"></div>
+
     <section class="search">
         <div class="locator">
             <input id="userInput" placeholder="    Enter a city...">
@@ -31,6 +33,10 @@
         </div>
     </section>
 
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
     <script src="Assets/script.js"></script>
 </body>
 </html>

@@ -52,3 +52,12 @@ playMusicBtn.addEventListener('click', function () {
 // Event listener for favorite hikes button
 
 // Page for favorite hikes
+
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8,
+  });
+};
