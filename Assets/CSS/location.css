@@ -93,7 +93,7 @@ body, html{
     font-family: "lato", sans-serif;
 }
 
-#playMusicBtn {
+.playMusicBtn {
     border-radius: 15px;
     float: left;
     margin-top: 365px;
