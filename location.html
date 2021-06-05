@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="Assets/CSS/location.css">
 </head>
 <body>
-    
+    <header class="jtext sec1 sec1-light boarder">HIKETUNEZ</header>
+
     <section class="search">
         <div class="locator">
-            <input id="userInput">
-            <button id="searchBtn"></button>
+            <input id="userInput" placeholder="    Enter a city...">
+            <button id="searchBtn" style="font-family: Lato">Go!</button>
+            <button id="favoritesBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
         </div>
     </section>
 
@@ -21,8 +23,8 @@
             <div class="modal card">
                 <div class="card-title">
                     <div class="card-info">
-                        <button class="playMusicBtn">Soundtrack</button>
-                        <button class="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';">Save Hike</button>
+                        <button class="playMusicBtn" style="font-family: Lato">Soundtrack</button>
+                        <button class="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Save Hike</button>
                     </div>
                 </div>
             </div>
