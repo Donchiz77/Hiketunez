@@ -1,0 +1,73 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: #666;
+}
+
+.Joe, .ruvim, .tammi{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Joe {
+    background-image: url('../assets/pexels-joe-kritz-1616173.jpg');
+    min-height: 100%;
+}
+.ruvim {
+    background-image: url('../assets/pexels-ruvim-miksanskiy-1582836.jpg');
+    min-height: 400px;
+}
+.tammi {
+    background-image: url('../assets/pexels-tammi-nowack-1559708.jpg');
+    min-height: 400px;
+}
+
+.sec1{
+ text-align: center;
+ padding: 50px 80px;   
+}
+
+.sec1-light{
+  background-color: #f4f4f4;
+  color: #666;  
+}
+
+.sec1-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
+
+.jtext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.jtext .boarder{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+.jtext .boarder.o-block{
+    background-color: transparent;
+}
+
+@media(max-width:568px){
+    .Joe, .ruvim, .tammi{
+        background-attachment: scroll;
+    }
+}
