@@ -12,6 +12,7 @@ var cardInfo = document.querySelector('card-info');
 
 // Location search
 
+
 // Event listener for search for location
 searchBtn.addEventListener('click', function () {
     hikeInfo(userInput.value.trim());
@@ -33,18 +34,23 @@ searchBtn.addEventListener('click', function () {
 
 };
 
-// Fetch song data
-playMusicBtn.addEventListener('click', function () {
-    fetch('https://openwhyd.org/adrien/playlist/61', {
-    method: 'GET',
-})
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
+playMusicBtn.addEventListener('click', getSongs);
+// Fetch song data {
+function getSongs() {
+var apiUrl = 'https://openwhyd.org/adrien/playlist/10?format=json&limit=10000';    
+fetch(apiUrl), {
+method: 'GET',
+mode: 'NO-CORS',
+}
+.then(function (response) {
+    return response.json();
+ })
+.then(function (data) {
         // add in what we really want it to do with the data
-        console.log(data)
+    console.log(data)
 });
+
+
 
 
 // Link hiking info to song data
@@ -59,6 +65,8 @@ playMusicBtn.addEventListener('click', function () {
 
 // Page for favorite hikes
 
+
+
 let map;
 
 function initMap() {
@@ -66,4 +74,5 @@ function initMap() {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 8,
   });
-};
+}}
+})
