@@ -30,22 +30,25 @@ searchBtn.addEventListener('click', function () {
                 // add in what we really want it to do with the data
                 console.log(data)
         });
-
-};
+    }
+});
 
 // Fetch song data
 playMusicBtn.addEventListener('click', function () {
-    fetch('https://openwhyd.org/adrien/playlist/61', {
+/*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
     method: 'GET',
 })
     .then(function (response) {
-        return response.json();
+        console.log(response)
     })
     .then(function (data) {
         // add in what we really want it to do with the data
+        console.log(data) 
+    }); */
+    $.get('https://openwhyd.org/adrien/playlist/61/?format=json').done(function(data){
         console.log(data)
+    }) 
 });
-
 
 // Link hiking info to song data
 
@@ -66,4 +69,5 @@ function initMap() {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 8,
   });
-};
+} 
+
