@@ -45,7 +45,7 @@ playMusicBtn.addEventListener('click', function () {
         // add in what we really want it to do with the data
         console.log(data) 
     }); */
-    $.get('https://openwhyd.org/adrien/playlist/61/?format=json').done(function(data){
+    $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
         console.log(data)
     }) 
 });
