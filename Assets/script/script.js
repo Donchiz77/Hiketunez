@@ -30,7 +30,21 @@ window.onload = function hikeInfo() {
     
 }
     
-
+playMusicBtn.addEventListener('click', function () {
+    /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
+        method: 'GET',
+    })
+        .then(function (response) {
+            console.log(response)
+        })
+        .then(function (data) {
+            // add in what we really want it to do with the data
+            console.log(data) 
+        }); */
+        $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+            console.log(data)
+        }) 
+    });
   
 
 <<<<<<< HEAD
