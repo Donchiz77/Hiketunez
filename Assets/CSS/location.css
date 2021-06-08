@@ -108,3 +108,8 @@ body, html{
     margin-left: 225px;
 }
 
+#map {
+    height: 100%;
+  }
+  
+

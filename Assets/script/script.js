@@ -45,9 +45,11 @@ playMusicBtn.addEventListener('click', function () {
         // add in what we really want it to do with the data
         console.log(data)
 });
+});
 
 
 // Link hiking info to song data
+
 
 // Modal for hike information when clicked on
 
@@ -59,11 +61,8 @@ playMusicBtn.addEventListener('click', function () {
 
 // Page for favorite hikes
 
-let map;
-
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
+  var options {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 8,
-  });
-};
+});
