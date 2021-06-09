@@ -91,3 +91,7 @@ function initMap() {
     center: { lat: -34.397, lng: 150.644 },
     zoom: 8,
 });
+
+$.get('https://developer.nps.gov/api/v1/parks/parks?parkCode=acad&api_key=M0Bd4k4wGIILywauG2LxueJtOIgJjtc8nBrEF7Jd').done(function(data){
+        console.log(data);
+    })
