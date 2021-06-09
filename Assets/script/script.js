@@ -21,28 +21,55 @@ var cardInfo = document.querySelector('.card-info');
 
 
 // Need to fix the jumping to bing when searched.
-var map;
-window.onload = function hikeInfo() {
-    console.log('hello');
-    fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
-    map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
+//var map;
+//window.onload = function hikeInfo() {
+    //console.log('hello');
+    //fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
+   // map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
     
-}
+//}
 
 //this is the function for parks. we need to pull the info into divs to load to the page. 
 // link https://www.nps.gov/subjects/developer/api-documentation.htm#/
-function nps() {
-    fetch('https://developer.nps.gov/api/v1/places?stateCode=sc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
-    .then(response => response.json())
-    .then(data => console.log(data));
-    
-}
+//function searchBtn() {
+    const TestList= document.querySelector('ul');
+    const UrlTest= new Request ('Places.json');
+fetch('https://developer.nps.gov/api/v1/places?stateCode=sc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
+   // method: 'PUT',
+   // headers:{
+        //'Content-Type':'application/json; charset=UTF-8'
+    //},
+   // body: JSON.stringify({
+    // place: "Park name"
+   // })
+//})
+    .then(Response => Response.json())
+    .then(title => console.log(title)) // {
+   // for(const title of data.title) {
+      // let listItem = document.createElement('li'); 
+       // listItem.appendChild(
+       //     document.createElement('strong')
+     // ).textContent = title.Name;
+     // listItem.append(
+     //    Place.Location
+     // );
+     // listItem.appendChild(
+      //  document.createElement('strong')
+     // ).textContent = title.Rating
+     // TestList.appendChild(listItem);
+   // }
+  // });
+
+
+//.catch(console.error);
+//}
+//console.log()
 // searchBtn.addEventListener('click', nps());
 // fetch('https://www.metaweather.com/api//location/search/?query=')
     
 
 
-playMusicBtn.addEventListener('click', function () {
+//playMusicBtn.addEventListener('click', function () {
     /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
         method: 'GET',
     })
@@ -53,25 +80,25 @@ playMusicBtn.addEventListener('click', function () {
             // add in what we really want it to do with the data
             console.log(data) 
         }); */
-        $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
-            console.log(data)
-        }) 
-    });
+        //$.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+            //console.log(data)
+        //}) 
+   // });
   
 
 // Fetch song data
-playMusicBtn.addEventListener('click', function () {
-    fetch('https://openwhyd.org/adrien/playlist/61', {
-    method: 'GET',
-})
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
+//playMusicBtn.addEventListener('click', function () {
+   // fetch('https://openwhyd.org/adrien/playlist/61', {
+   // method: 'GET',
+//})
+//    .then(function (response) {
+ //       return response.json();
+ //   })
+  //  .then(function (data) {
         // add in what we really want it to do with the data
-        console.log(data)
-});
-});
+ //       console.log(data)
+//});
+//});
 // playMusicBtn.addEventListener('click', function () {
 //     fetch('https://openwhyd.org/yvad/playlist/5', {
 //     method: 'GET',
@@ -99,12 +126,12 @@ playMusicBtn.addEventListener('click', function () {
 
 // Page for favorite hikes
 
-function initMap() {
-  var options {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-});
+//function initMap() {
+  //var options {
+    //center: { lat: -34.397, lng: 150.644 },
+    //zoom: 8,
+//});
 
-$.get('https://developer.nps.gov/api/v1/parks/parks?parkCode=acad&api_key=M0Bd4k4wGIILywauG2LxueJtOIgJjtc8nBrEF7Jd').done(function(data){
-        console.log(data);
-    })
+//$.get('https://developer.nps.gov/api/v1/parks/parks?parkCode=acad&api_key=M0Bd4k4wGIILywauG2LxueJtOIgJjtc8nBrEF7Jd').done(function(data){
+       // console.log(data);
+   // })
