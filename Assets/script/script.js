@@ -19,7 +19,7 @@ searchBtn.addEventListener('click', function () {
 
 
     // Fetch data from apis to show on map
-    function test (hikeInfo) {
+  /*  function test (hikeInfo) {
         fetch('link map api', {
             method: 'GET',
         })
@@ -30,8 +30,16 @@ searchBtn.addEventListener('click', function () {
                 // add in what we really want it to do with the data
                 console.log(data)
         });
-    }
-});
+    }*/
+}); 
+
+var map;
+window.onload = function hikeInfo() {
+    console.log('hello');
+    fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
+    map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
+    
+}
 
 // Fetch song data
 playMusicBtn.addEventListener('click', function () {
@@ -46,7 +54,7 @@ playMusicBtn.addEventListener('click', function () {
         console.log(data) 
     }); */
     $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
-        console.log(data)
+        playPlaylist(data.split("\n"));
     }) 
 });
 
@@ -62,12 +70,4 @@ playMusicBtn.addEventListener('click', function () {
 
 // Page for favorite hikes
 
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-} 
 
