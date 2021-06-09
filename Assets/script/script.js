@@ -28,7 +28,20 @@ window.onload = function hikeInfo() {
     map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
     
 }
+
+//this is the function for parks. we need to pull the info into divs to load to the page. 
+// link https://www.nps.gov/subjects/developer/api-documentation.htm#/
+function nps() {
+    fetch('https://developer.nps.gov/api/v1/places?stateCode=sc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
+    .then(response => response.json())
+    .then(data => console.log(data));
     
+}
+// searchBtn.addEventListener('click', nps());
+// fetch('https://www.metaweather.com/api//location/search/?query=')
+    
+
+
 playMusicBtn.addEventListener('click', function () {
     /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
         method: 'GET',
