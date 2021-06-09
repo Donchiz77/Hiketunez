@@ -1,22 +1,57 @@
+var player;
+var currentPlaylist;
 
-
-    
-function playYouTube(videourl){
-    var obj = {"video": {
-        "value": "<iframe title='YouTube video player' type=\"text/html\"width='640'  height='390' src='https:"+videourl+"?autoplay=1' frameborder='0' allowFullScreen></iframe>"
-        }}
-        
-    $("#player").html(obj.video.value);
-    $("#player").on("onStateChange", function(state){
-        console.log("onStateChange");
-        if(state === 0){
-            //play next song in playlist
-            console.log("video has ended")
+function playNextSong(){
+    while (currentPlaylist.length){
+        var url= currentPlaylist.shift();
+        if(url.indexOf("youtube")=== -1){
+        // for now skipping all non-youtube URLs    
+            continue;
         }
-    });
+        playYouTube(url.replace("//youtube.com/watch?v=", ""));
+        break;
+    }
 }
+    
+function playYouTube(videoId){
+    if (player){
+        player.loadVideoById(videoId);
+    }
+    else {
+        player = new YT.Player('player', {
+            height: '300',
+            width: '600',
+            videoId: videoId,
+            events: {
+                'onStateChange': onPlayerStateChange,
+                'onError': onPlayerError
+            }
+        });
+    }
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        console.log("video playing");
+    }else if ( event.data == YT.PlayerState.ENDED){
+        console.log("video stopped");
+        playNextSong();
+    }
+}
+
+function onPlayerError(event){
+    console.log("video error");
+    playNextSong();
+}
+
 
 function playPlaylist(playlist){
     console.log(playlist);
-    playYouTube(playlist[2].replace("watch?v=", "embed/"));
+    currentPlaylist=playlist;
+    playNextSong();
 } 
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
