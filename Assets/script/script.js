@@ -5,9 +5,10 @@ var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
 var saveHikeBtn = document.querySelector('saveHikeBtn');
 // Modal Variables
-var modalCard = document.querySelector('#card');
+var modalCard = document.querySelector('.modal-card');
 var modalTitle = document.querySelector('.card-title');
 var cardInfo = document.querySelector('.card-info');
+var modalAddress = document.querySelector('.modal-address');
 
 
 // Location search
@@ -64,8 +65,8 @@ function parks() {
             console.log(res.data[i]);
             console.log(res.data[i].fullName);
             console.log(res.data[i].description);
-            console.log(res.data[i].addresses[0]);
-
+            console.log(res.data[i].addresses[0].line1+res.data[i].addresses[0].city);
+    
             var fullName = document.createElement('h1');
             fullName.textContent = res.data[i].fullName;
             fullName.classList.add("modal-title");
@@ -78,13 +79,35 @@ function parks() {
             addresses.textContent = res.data[i].addresses[0];
             addresses.classList.add("modal-address");
 
+            var infoCard = document.createElement('div');
+            
             
 
-            modalCard.appendChild(fullName);
+            infoCard.appendChild(fullName);
             modalCard.appendChild(description);
             modalCard.appendChild(addresses);
             // modalCard.appendChild(saveHikeBtn);
             // modalCard.appendChild(playMusicBtn);
+
+            var line1 = res.data[i].addresses[0].line1;
+            var city = res.data[i].addresses[0].city;
+            var state = res.data[i].addresses[0].stateCode;
+            var postal = res.data[i].addresses[0].postalCode;
+            console.log(line1 + ", " + city + ", " + state + ", " + postal);
+
+            line1 = document.createElement('p');
+            line1.classList.add("modal-address");
+            city = document.createElement('p');
+            city.classList.add("modal-address");
+            state = document.createElement('p');
+            state.classList.add("modal-address");
+            postal = document.createElement('p');
+            postal.classList.add("modal-address");
+
+            modalAddress.appendChild(line1);
+            modalAddress.appendChild(city);
+            modalAddress.appendChild(state);
+            modalAddress.appendChild(postal);
         }
     });
 }

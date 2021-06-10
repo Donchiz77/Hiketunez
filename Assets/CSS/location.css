@@ -76,12 +76,12 @@ body, html{
     border-radius: 15px;
 }
 
-/* .modal {
+.modal-card {
     background-color: #453ba1;
     height: 400px;
     width: 400px;
     display:flex;
-} */
+}
 
 /* #card {
     background-color: #453ba1;
