@@ -133,7 +133,7 @@ function parks() {
                 console.log(data)
         });
     }*/
-}); 
+// }}; 
 
 var map;
 window.onload = function hikeInfo() {
@@ -160,25 +160,7 @@ playMusicBtn.addEventListener('click', function () {
     }) 
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-playMusicBtn.addEventListener('click', getSongs);
-// Fetch song data {
-function getSongs() {
-var apiUrl = 'https://openwhyd.org/adrien/playlist/10?format=json&limit=10000';    
-fetch(apiUrl), {
-method: 'GET',
-mode: 'NO-CORS',
-}
-.then(function (response) {
-    return response.json();
- })
-.then(function (data) {
-        // add in what we really want it to do with the data
-    console.log(data)
-});
-=======
 // Fetch song data
 // playMusicBtn.addEventListener('click', function () {
 //     fetch('https://openwhyd.org/yvad/playlist/5', {
@@ -192,13 +174,9 @@ mode: 'NO-CORS',
 //         console.log(data)
 // });
 // });
->>>>>>> e7857cc1db432949a7c0dbe99cbd0fbb90bccbd5
 
 
 
-
-=======
->>>>>>> bae4215b3005f211a86aa85b2456602b65b61f50
 // Link hiking info to song data
 
 // Modal for hike information when clicked on
@@ -211,17 +189,3 @@ mode: 'NO-CORS',
 
 // Page for favorite hikes
 
-<<<<<<< HEAD
-
-
-let map;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-}}
-
-=======
->>>>>>> e7857cc1db432949a7c0dbe99cbd0fbb90bccbd5
