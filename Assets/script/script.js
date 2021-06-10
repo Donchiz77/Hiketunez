@@ -5,7 +5,7 @@ var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
 var saveHikeBtn = document.querySelector('saveHikeBtn');
 // Modal Variables
-var modalCard = document.querySelector('.modal-card');
+var modalCard = document.querySelector('#card');
 var modalTitle = document.querySelector('.card-title');
 var cardInfo = document.querySelector('.card-info');
 
@@ -15,33 +15,86 @@ var cardInfo = document.querySelector('.card-info');
 
 // Event listener for search for location
 // This function works. Do not edit!
-// searchBtn.addEventListener('click', function () {
-//     hikeInfo(userInput.value)
-//     console.log(userInput.value); 
-// });
-
+searchBtn.addEventListener('click', parks);
 
 // Need to fix the jumping to bing when searched.
-var map;
-window.onload = function hikeInfo() {
-    console.log('hello');
-    fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
-    map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
+// var map;
+// window.onload = function hikeInfo() {
+//     console.log('hello');
+//     fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
+//     map = new Microsoft.Maps.Map(document.getElementById('map'), {});
+    
+// }
+
+//this is the function for parks
+// link https://www.nps.gov/subjects/developer/api-documentation.htm#/
+function places() {
+    console.log('click');
+    fetch('https://developer.nps.gov/api/v1/places?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
+    .then(response => response.json())
+    .then(res => { 
+        for (i=0; i<res.data.length; i++) {
+            console.log(res.data[i]);
+            console.log(res.data[i].title);
+            console.log(res.data[i].listingDescription);
+            var title = document.createElement('h1');
+            title.textContent = res.data[i].title;
+            modalCard.appendChild(title);
+            
+            var listingDescription = document.createElement('p');
+            listingDescription.textContent = res.data[i].listingDescription;
+            modalCard.appendChild(listingDescription);
+            title.classList.add("modal-title");
+            listingDescription.classList.add("modal-description");
+              
+        }
+        
+    });
     
 }
 
-//this is the function for parks. we need to pull the info into divs to load to the page. 
-// link https://www.nps.gov/subjects/developer/api-documentation.htm#/
-function nps() {
-    fetch('https://developer.nps.gov/api/v1/places?stateCode=sc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
+
+//This function pulls parks across the U.S.
+//The address pulling is not working. Returning object
+function parks() {
+    console.log('hello');
+    fetch('https://developer.nps.gov/api/v1/parks?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
     .then(response => response.json())
-    .then(data => console.log(data));
-    
+    .then(res => {
+        for (i=0; i<res.data.length; i++) {
+            console.log(res.data[i]);
+            console.log(res.data[i].fullName);
+            console.log(res.data[i].description);
+            console.log(res.data[i].addresses[0]);
+
+            var fullName = document.createElement('h1');
+            fullName.textContent = res.data[i].fullName;
+            fullName.classList.add("modal-title");
+
+            var description = document.createElement('p');
+            description.textContent = res.data[i].description;
+            description.classList.add("modal-description");
+
+            var addresses = document.createElement('p');
+            addresses.textContent = res.data[i].addresses[0];
+            addresses.classList.add("modal-address");
+
+            
+
+            modalCard.appendChild(fullName);
+            modalCard.appendChild(description);
+            modalCard.appendChild(addresses);
+            // modalCard.appendChild(saveHikeBtn);
+            // modalCard.appendChild(playMusicBtn);
+        }
+    });
 }
 // searchBtn.addEventListener('click', nps());
 // fetch('https://www.metaweather.com/api//location/search/?query=')
     
-
+// if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
+// The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
+// elementname.value.trim() becomes search
 
 playMusicBtn.addEventListener('click', function () {
     /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
@@ -60,6 +113,7 @@ playMusicBtn.addEventListener('click', function () {
     });
   
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 playMusicBtn.addEventListener('click', getSongs);
 // Fetch song data {
@@ -95,6 +149,8 @@ mode: 'NO-CORS',
 
 
 
+=======
+>>>>>>> bae4215b3005f211a86aa85b2456602b65b61f50
 // Link hiking info to song data
 
 // Modal for hike information when clicked on
