@@ -158,6 +158,7 @@ function parks() {
 // The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
 // elementname.value.trim() becomes search
 
+<<<<<<< HEAD
 //playMusicBtn.addEventListener('click', function () {
     /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
         method: 'GET',
@@ -174,6 +175,48 @@ function parks() {
         //}) 
    // });
   
+=======
+
+    // Fetch data from apis to show on map
+  /*  function test (hikeInfo) {
+        fetch('link map api', {
+            method: 'GET',
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // add in what we really want it to do with the data
+                console.log(data)
+        });
+    }*/
+}); 
+
+var map;
+window.onload = function hikeInfo() {
+    console.log('hello');
+    fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
+    map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
+    
+}
+
+// Fetch song data
+playMusicBtn.addEventListener('click', function () {
+/*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
+    method: 'GET',
+})
+    .then(function (response) {
+        console.log(response)
+    })
+    .then(function (data) {
+        // add in what we really want it to do with the data
+        console.log(data) 
+    }); */
+    $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+        playPlaylist(data.split("\n"));
+    }) 
+});
+>>>>>>> 14aa08547408ca08a7ea33fa227e7c15d2b57b71
 
 // Fetch song data
 //playMusicBtn.addEventListener('click', function () {
