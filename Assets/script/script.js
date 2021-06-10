@@ -115,6 +115,7 @@ playMusicBtn.addEventListener('click', function () {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+
 playMusicBtn.addEventListener('click', getSongs);
 // Fetch song data {
 function getSongs() {
@@ -174,6 +175,6 @@ function initMap() {
     zoom: 8,
   });
 }}
-})
+
 =======
 >>>>>>> e7857cc1db432949a7c0dbe99cbd0fbb90bccbd5
