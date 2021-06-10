@@ -1,5 +1,6 @@
 // Button Variables
-var searchBtn = document.querySelector('#searchBtn');
+var searchPlacesBtn = document.querySelector('#searchPlacesBtn');
+var searchParksBtn = document.querySelector('#searchParksBtn');
 var userInput = document.querySelector('#userInput');
 var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
@@ -12,10 +13,13 @@ var modalAddress = document.querySelector('.modal-address');
 
 
 // Location search
+// if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
+// The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
+// elementname.value.trim() becomes search
 
 // Event listener for search for location
-// This function works. Do not edit!
-searchBtn.addEventListener('click', parks);
+searchParksBtn.addEventListener('click', parks);
+searchPlacesBtn.addEventListener('click', places);
 
 // Need to fix the jumping to bing when searched.
 // var map;
@@ -46,11 +50,12 @@ function places() {
             modalCard.appendChild(listingDescription);
             title.classList.add("modal-title");
             listingDescription.classList.add("modal-description");
+
+            
               
         }
-        
     });
-    
+    return; //not working
 }
 
 
@@ -111,12 +116,7 @@ function parks() {
         }
     });
 }
-// searchBtn.addEventListener('click', nps());
-// fetch('https://www.metaweather.com/api//location/search/?query=')
-    
-// if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
-// The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
-// elementname.value.trim() becomes search
+
 
 playMusicBtn.addEventListener('click', function () {
     /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
