@@ -77,18 +77,33 @@ body, html{
 }
 
 .modal-card {
-    background-color: #f4f4f4;
+    background-color: #453ba1;
+    height: 400px;
+    width: 400px;
+    display:flex;
+}
+
+/* #card {
+    background-color: #453ba1;
      height: 400px;
      width: 400px;
      display:flex;
-}
+     
+} */
 
-.card-title {
+.modal-title {
     font-size: 30px;
     font-family: "lato", sans-serif;
+    line-height: 5px;
 }
 
-.card-info {
+.modal-description {
+    font-size: 20px;
+    font-family: "lato", sans-serif;
+    line-height: 23px;
+}
+
+.modal-address {
     font-size: 15px;
     font-family: "lato", sans-serif;
 }
