@@ -5,9 +5,10 @@ var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
 var saveHikeBtn = document.querySelector('saveHikeBtn');
 // Modal Variables
-var modalCard = document.querySelector('#card');
+var modalCard = document.querySelector('.modal-card');
 var modalTitle = document.querySelector('.card-title');
 var cardInfo = document.querySelector('.card-info');
+var modalAddress = document.querySelector('.modal-address');
 
 
 // Location search
@@ -65,8 +66,8 @@ function parks() {
             console.log(res.data[i]);
             console.log(res.data[i].fullName);
             console.log(res.data[i].description);
-            console.log(res.data[i].addresses[0]);
-
+            console.log(res.data[i].addresses[0].line1+res.data[i].addresses[0].city);
+    
             var fullName = document.createElement('h1');
             fullName.textContent = res.data[i].fullName;
             fullName.classList.add("modal-title");
@@ -79,13 +80,35 @@ function parks() {
             addresses.textContent = res.data[i].addresses[0];
             addresses.classList.add("modal-address");
 
+            var infoCard = document.createElement('div');
+            
             
 
-            modalCard.appendChild(fullName);
+            infoCard.appendChild(fullName);
             modalCard.appendChild(description);
             modalCard.appendChild(addresses);
             // modalCard.appendChild(saveHikeBtn);
             // modalCard.appendChild(playMusicBtn);
+
+            var line1 = res.data[i].addresses[0].line1;
+            var city = res.data[i].addresses[0].city;
+            var state = res.data[i].addresses[0].stateCode;
+            var postal = res.data[i].addresses[0].postalCode;
+            console.log(line1 + ", " + city + ", " + state + ", " + postal);
+
+            line1 = document.createElement('p');
+            line1.classList.add("modal-address");
+            city = document.createElement('p');
+            city.classList.add("modal-address");
+            state = document.createElement('p');
+            state.classList.add("modal-address");
+            postal = document.createElement('p');
+            postal.classList.add("modal-address");
+
+            modalAddress.appendChild(line1);
+            modalAddress.appendChild(city);
+            modalAddress.appendChild(state);
+            modalAddress.appendChild(postal);
         }
     });
 }
@@ -96,22 +119,46 @@ function parks() {
 // The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
 // elementname.value.trim() becomes search
 
-playMusicBtn.addEventListener('click', function () {
-    /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
-        method: 'GET',
-    })
-        .then(function (response) {
-            console.log(response)
+
+    // Fetch data from apis to show on map
+  /*  function test (hikeInfo) {
+        fetch('link map api', {
+            method: 'GET',
         })
-        .then(function (data) {
-            // add in what we really want it to do with the data
-            console.log(data) 
-        }); */
-        $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
-            console.log(data)
-        }) 
-    });
-  
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                // add in what we really want it to do with the data
+                console.log(data)
+        });
+    }*/
+}); 
+
+var map;
+window.onload = function hikeInfo() {
+    console.log('hello');
+    fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
+    map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
+    
+}
+
+// Fetch song data
+playMusicBtn.addEventListener('click', function () {
+/*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
+    method: 'GET',
+})
+    .then(function (response) {
+        console.log(response)
+    })
+    .then(function (data) {
+        // add in what we really want it to do with the data
+        console.log(data) 
+    }); */
+    $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+        playPlaylist(data.split("\n"));
+    }) 
+});
 
 <<<<<<< HEAD
 <<<<<<< HEAD

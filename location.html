@@ -31,7 +31,7 @@
 
     <section class="results">
         <div class="icon">
-            <div class="modal" id="card">
+            <div class="modal-card" id="card">
                         <button class="playMusicBtn" style="font-family: Lato">Soundtrack</button>
                         <button id="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Save Hike</button>
                     </div>
@@ -39,11 +39,21 @@
             </div>
         </div>
     </section>
+
+    <div id="player"></div>
+
+
+    <section class="address">
+        <div class="modal-address"></div>
+    </section>
    
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ'></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
     <script src="Assets/script/script.js"></script>
+    <script src="Assets/script/player.js"></script>
 </body>
 </html>
