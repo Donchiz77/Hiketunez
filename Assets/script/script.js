@@ -2,15 +2,13 @@
 var searchPlacesBtn = document.querySelector('#searchPlacesBtn');
 var searchParksBtn = document.querySelector('#searchParksBtn');
 var userInput = document.querySelector('#userInput');
-var playMusicBtn = document.querySelector('.playMusicBtn');
-var favoriteBtn = document.querySelector('#favoritesBtn');
-var saveHikeBtn = document.querySelector('saveHikeBtn');
 // Modal Variables
 var cards = document.querySelector('#cards');
 var modalTitle = document.querySelector('.card-title');
 var cardInfo = document.querySelector('.card-info');
 var modalAddress = document.querySelector('.modal-address');
 var search = userInput.value;
+
 
 // Location search
 // if you want to use the forms value in the nps function.  You need to pass it in to the nps like this nps(elementname.value.trim()).
@@ -39,10 +37,10 @@ searchPlacesBtn.addEventListener('click', places);
 
 
 function places() {
-    clearSearch;
+    // clearSearch;
 
-    console.log('click');
-    fetch('https://developer.nps.gov/api/v1/places?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
+    console.log('places is workings');
+    fetch('https://developer.nps.gov/api/v1/places?stateCode=nc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
     .then(response => response.json())
     .then(res => { 
         for (i=0; i<res.data.length; i++) {
@@ -50,6 +48,8 @@ function places() {
             console.log(res.data[i].title);
             console.log(res.data[i].listingDescription);
 
+
+            //Building Card
             var infoCard = document.createElement('div');
             infoCard.setAttribute("id", `card${i}`);
             infoCard.setAttribute("class", "modal-card")
@@ -65,21 +65,38 @@ function places() {
             title.classList.add("modal-title");
             listingDescription.classList.add("modal-description");
 
+            //Buttons
+            var playMusicBtn = document.createElement('button');
+            playMusicBtn.innerHTML = 'Soundtrack';
+            playMusicBtn.classList.add("playMusicBtn");
+            cards.appendChild(playMusicBtn);
+
+            var saveHikeBtn = document.createElement('button');
+            saveHikeBtn.innerHTML = 'Save Hike';
+            saveHikeBtn.classList.add("saveHikeBtn");
+            cards.appendChild(saveHikeBtn);
             
-              
-        }
+            var addressBtn = document.createElement('button');
+            addressBtn.innerHTML = 'Address';
+            addressBtn.classList.add("addressBtn");
+            cards.appendChild(addressBtn);
+      
+        } 
+        
+       
     });
-     //not working
+    //  (res.data[i].listingDescription === null) {
+    //     cards.style.display = "none";
 }
 
 
 //This function pulls parks across the U.S.
 //The address pulling is not working. Returning object
 function parks() {
-    clearSearch;
+    // clearSearch;
 
     console.log('hello');
-    fetch('https://developer.nps.gov/api/v1/parks?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
+    fetch('https://developer.nps.gov/api/v1/parks?stateCode=nc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
     .then(response => response.json())
     .then(res => {
         for (i=0; i<res.data.length; i++) {
@@ -88,6 +105,7 @@ function parks() {
             console.log(res.data[i].description);
             console.log(res.data[i].addresses[0].line1+res.data[i].addresses[0].city);
     
+            //Building Card
             var fullName = document.createElement('h1');
             fullName.textContent = res.data[i].fullName;
             fullName.classList.add("modal-title");
@@ -104,14 +122,30 @@ function parks() {
             infoCard.setAttribute("id", `card${i}`);
             infoCard.setAttribute("class", "modal-card")
             cards.appendChild(infoCard);
+
+
+            //Buttons
+            var playMusicBtn = document.createElement('button');
+            playMusicBtn.innerHTML = 'Soundtrack';
+            playMusicBtn.classList.add("playMusicBtn");
+            cards.appendChild(playMusicBtn);
+
+            var saveHikeBtn = document.createElement('button');
+            saveHikeBtn.innerHTML = 'Save Hike';
+            saveHikeBtn.classList.add("saveHikeBtn");
+            cards.appendChild(saveHikeBtn);
             
+            var addressBtn = document.createElement('button');
+            addressBtn.innerHTML = 'Address';
+            addressBtn.classList.add("addressBtn");
+            cards.appendChild(addressBtn);
             
 
             infoCard.appendChild(fullName);
             infoCard.appendChild(description);
             // modalCard.appendChild(addresses);
-            infoCard.appendChild(saveHikeBtn);
-            infoCard.appendChild(playMusicBtn);
+            // infoCard.appendChild(saveHikeBtn);
+            // infoCard.appendChild(playMusicBtn);
 
             var line1 = res.data[i].addresses[0].line1;
             var city = res.data[i].addresses[0].city;

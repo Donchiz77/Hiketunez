@@ -76,12 +76,13 @@ body, html{
     border-radius: 15px;
 }
 
-#favoritesBtn {
+#saveHikeBtn {
     width: 100px;
     height: 30px;
     margin-left: 5px;
     border-radius: 15px;
 }
+
 
 .modal-card {
     background-color: #453ba1;
@@ -115,7 +116,7 @@ body, html{
     font-family: "lato", sans-serif;
 }
 
-.playMusicBtn {
+/* .playMusicBtn {
     border-radius: 15px;
     float: left;
     margin-top: 365px;
@@ -128,5 +129,5 @@ body, html{
     float: right;
     margin-top: 365px;
     margin-left: 225px;
-}
+} */
 
