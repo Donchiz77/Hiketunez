@@ -33,64 +33,63 @@ function places() {
 
     console.log('places is workings');
     fetch('https://developer.nps.gov/api/v1/places?stateCode=nc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
-    .then(response => response.json())
-    .then(res => { 
-        for (i=0; i<res.data.length; i++) {
-            console.log(res.data[i]);
-            console.log(res.data[i].title);
-            console.log(res.data[i].listingDescription);
+        .then(response => response.json())
+        .then(res => {
+            for (i = 0; i < res.data.length; i++) {
+                console.log(res.data[i]);
+                console.log(res.data[i].title);
+                console.log(res.data[i].listingDescription);
+
+                //Building Card
+                var infoCard = document.createElement('div');
+                infoCard.setAttribute("id", `card${i}`);
+                infoCard.setAttribute("class", "modal-card")
+                cards.appendChild(infoCard);
+
+                var title = document.createElement('h1');
+                title.textContent = res.data[i].title;
+                infoCard.appendChild(title);
+
+                var listingDescription = document.createElement('p');
+                listingDescription.textContent = res.data[i].listingDescription;
+                infoCard.appendChild(listingDescription);
+                title.classList.add("modal-title");
+                listingDescription.classList.add("modal-description");
+
+                //Buttons
+                var playMusicBtn = document.createElement('button');
+                playMusicBtn.innerHTML = 'Soundtrack';
+                playMusicBtn.classList.add("playMusicBtn");
+                cards.appendChild(playMusicBtn);
+
+                var saveHikeBtn = document.createElement('button');
+                saveHikeBtn.innerHTML = 'Save Hike';
+                saveHikeBtn.classList.add("saveHikeBtn");
+                cards.appendChild(saveHikeBtn);
+
+                var addressBtn = document.createElement('button');
+                addressBtn.innerHTML = 'Address';
+                addressBtn.classList.add("addressBtn");
+                cards.appendChild(addressBtn);
+
+                playMusicBtn.addEventListener
+                saveHikeBtn.addEventListener
+                // $('.saveBtn').on('click', function () {
+                //     var input = $(this).siblings('.description').val();
+                //     var time = $(this).parent().attr('id');
+
+                //     localStorage.setItem(time, input);
+                // });
 
 
-            //Building Card
-            var infoCard = document.createElement('div');
-            infoCard.setAttribute("id", `card${i}`);
-            infoCard.setAttribute("class", "modal-card")
-            cards.appendChild(infoCard);
-
-            var title = document.createElement('h1');
-            title.textContent = res.data[i].title;
-            infoCard.appendChild(title);
-            
-            var listingDescription = document.createElement('p');
-            listingDescription.textContent = res.data[i].listingDescription;
-            infoCard.appendChild(listingDescription);
-            title.classList.add("modal-title");
-            listingDescription.classList.add("modal-description");
-
-            //Buttons
-            var playMusicBtn = document.createElement('button');
-            playMusicBtn.innerHTML = 'Soundtrack';
-            playMusicBtn.classList.add("playMusicBtn");
-            cards.appendChild(playMusicBtn);
-
-            var saveHikeBtn = document.createElement('button');
-            saveHikeBtn.innerHTML = 'Save Hike';
-            saveHikeBtn.classList.add("saveHikeBtn");
-            cards.appendChild(saveHikeBtn);
-            
-            var addressBtn = document.createElement('button');
-            addressBtn.innerHTML = 'Address';
-            addressBtn.classList.add("addressBtn");
-            cards.appendChild(addressBtn);
-
-            playMusicBtn.addEventListener
-            saveHikeBtn.addEventListener
-            // $('.saveBtn').on('click', function () {
-            //     var input = $(this).siblings('.description').val();
-            //     var time = $(this).parent().attr('id');
-        
-            //     localStorage.setItem(time, input);
-            // });
-            
-
-        }
-    });
+            }
+        });
 };
-        
-       
 
-    //  (res.data[i].listingDescription === null) {
-    //     cards.style.display = "none"
+
+
+//  (res.data[i].listingDescription === null) {
+//     cards.style.display = "none"
 
 
 //This function pulls parks across the U.S.
@@ -100,91 +99,92 @@ function parks() {
 
     console.log('hello');
     fetch('https://developer.nps.gov/api/v1/parks?stateCode=nc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
-    .then(response => response.json())
-    .then(res => {
-        for (i=0; i<res.data.length; i++) {
-            console.log(res.data[i]);
-            console.log(res.data[i].fullName);
-            console.log(res.data[i].description);
-            console.log(res.data[i].addresses[0].line1+res.data[i].addresses[0].city);
-    
-            //Building Card
-            var fullName = document.createElement('h1');
-            fullName.textContent = res.data[i].fullName;
-            fullName.classList.add("modal-title");
+        .then(response => response.json())
+        .then(res => {
+            for (i = 0; i < res.data.length; i++) {
+                console.log(res.data[i]);
+                console.log(res.data[i].fullName);
+                console.log(res.data[i].description);
+                console.log(res.data[i].addresses[0].line1 + res.data[i].addresses[0].city);
 
-            var description = document.createElement('p');
-            description.textContent = res.data[i].description;
-            description.classList.add("modal-description");
+                //Building Card
+                var fullName = document.createElement('h1');
+                fullName.textContent = res.data[i].fullName;
+                fullName.classList.add("modal-title");
 
-            var addresses = document.createElement('p');
-            addresses.textContent = res.data[i].addresses[0];
-            addresses.classList.add("modal-address");
-            
-            var infoCard = document.createElement('div');
-            infoCard.setAttribute("id", `card${i}`);
-            infoCard.setAttribute("class", "modal-card")
-            cards.appendChild(infoCard);
+                var description = document.createElement('p');
+                description.textContent = res.data[i].description;
+                description.classList.add("modal-description");
+
+                var addresses = document.createElement('p');
+                addresses.textContent = res.data[i].addresses[0];
+                addresses.classList.add("modal-address");
+
+                var infoCard = document.createElement('div');
+                infoCard.setAttribute("id", `card${i}`);
+                infoCard.setAttribute("class", "modal-card")
+                cards.appendChild(infoCard);
 
 
-            //Buttons
-            var playMusicBtn = document.createElement('button');
-            playMusicBtn.innerHTML = 'Soundtrack';
-            playMusicBtn.classList.add("playMusicBtn");
-            cards.appendChild(playMusicBtn);
+                //Buttons
+                var playMusicBtn = document.createElement('button');
+                playMusicBtn.innerHTML = 'Soundtrack';
+                playMusicBtn.classList.add("playMusicBtn");
+                cards.appendChild(playMusicBtn);
 
-            var saveHikeBtn = document.createElement('button');
-            saveHikeBtn.innerHTML = 'Save Hike';
-            saveHikeBtn.classList.add("saveHikeBtn");
-            cards.appendChild(saveHikeBtn);
-            
-            var addressBtn = document.createElement('button');
-            addressBtn.innerHTML = 'Address';
-            addressBtn.classList.add("addressBtn");
-            cards.appendChild(addressBtn);
-            
+                var saveHikeBtn = document.createElement('button');
+                saveHikeBtn.innerHTML = 'Save Hike';
+                saveHikeBtn.classList.add("saveHikeBtn");
+                cards.appendChild(saveHikeBtn);
 
-            infoCard.appendChild(fullName);
-            infoCard.appendChild(description);
-            // modalCard.appendChild(addresses);
-            // infoCard.appendChild(saveHikeBtn);
-            // infoCard.appendChild(playMusicBtn);
+                var addressBtn = document.createElement('button');
+                addressBtn.innerHTML = 'Address';
+                addressBtn.classList.add("addressBtn");
+                cards.appendChild(addressBtn);
 
-            //Modal Info for Address
-            var line1 = res.data[i].addresses[0].line1;
-            var city = res.data[i].addresses[0].city;
-            var state = res.data[i].addresses[0].stateCode;
-            var postal = res.data[i].addresses[0].postalCode;
-            console.log(line1 + ", " + city + ", " + state + ", " + postal);
 
-            line1 = document.createElement('p');
-            line1.classList.add("modal-address");
-            city = document.createElement('p');
-            city.classList.add("modal-address");
-            state = document.createElement('p');
-            state.classList.add("modal-address");
-            postal = document.createElement('p');
-            postal.classList.add("modal-address");
+                infoCard.appendChild(fullName);
+                infoCard.appendChild(description);
+                // modalCard.appendChild(addresses);
+                // infoCard.appendChild(saveHikeBtn);
+                // infoCard.appendChild(playMusicBtn);
 
-            modalAddress.appendChild(line1);
-            modalAddress.appendChild(city);
-            modalAddress.appendChild(state);
-            modalAddress.appendChild(postal);
+                //Modal Info for Address
+                var line1 = res.data[i].addresses[0].line1;
+                var city = res.data[i].addresses[0].city;
+                var state = res.data[i].addresses[0].stateCode;
+                var postal = res.data[i].addresses[0].postalCode;
+                console.log(line1 + ", " + city + ", " + state + ", " + postal);
 
-            addressBtn.addEventListener('click', function modal() {
-        }
-    });
-}
+                line1 = document.createElement('p');
+                line1.classList.add("modal-address");
+                city = document.createElement('p');
+                city.classList.add("modal-address");
+                state = document.createElement('p');
+                state.classList.add("modal-address");
+                postal = document.createElement('p');
+                postal.classList.add("modal-address");
 
-// Link hiking info to song data
+                modalAddress.appendChild(line1);
+                modalAddress.appendChild(city);
+                modalAddress.appendChild(state);
+                modalAddress.appendChild(postal);
 
-// Modal for hike information when clicked on
+                addressBtn.addEventListener('click', function modal() {
+                }
+                );
 
-// Event listener for start hike button that prompts music to play
+        }}
+            // Link hiking info to song data
 
-// Local storage favorite hikes
+            // Modal for hike information when clicked on
 
-// Event listener for favorite hikes button
+            // Event listener for start hike button that prompts music to play
 
-// Page for favorite hikes
+            // Local storage favorite hikes
 
+            // Event listener for favorite hikes button
+
+            // Page for favorite hikes
+
+        )}
