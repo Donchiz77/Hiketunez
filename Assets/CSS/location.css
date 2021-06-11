@@ -62,7 +62,14 @@ body, html{
     border-radius: 15px;
 }
 
-#searchBtn {
+#searchParksBtn {
+    width:100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+#searchPlacesBtn {
     width:100px;
     height: 30px;
     margin-left: 5px;
