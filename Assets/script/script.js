@@ -126,42 +126,18 @@ function parks() {
         }
     });
 }
-<<<<<<< HEAD
-// searchBtn.addEventListener('click', nps());
-// fetch('https://www.metaweather.com/api//location/search/?query=')
+
     
 // if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
-// The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
+// The ns function should have a parameter like this nps(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
 // elementname.value.trim() becomes search
 
+playMusicBtn.addEventListener('click', function () {
 
-    // Fetch data from apis to show on map
-  /*  function test (hikeInfo) {
-        fetch('link map api', {
-            method: 'GET',
-        })
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                // add in what we really want it to do with the data
-                console.log(data)
-        });
-    }*/
-
-
-
-
-=======
->>>>>>> 67dbbbc054be5fcd2fa09371e9c49c45111359c1
-
-// Fetch song data
-// playMusicBtn.addEventListener('click', function () {
-
-//     $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
-//         playPlaylist(data.split("\n"));
-//     }) 
-// });
+    $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+       playPlaylist(data.split("\n"));
+    }) 
+ });
 
 // Link hiking info to song data
 
