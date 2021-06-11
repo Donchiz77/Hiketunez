@@ -15,15 +15,7 @@ var search = userInput.value;
 // The nps function should have a parameter like this nps(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
 // elementname.value.trim() becomes search
 
-searchParksBtn.addEventListener('click', function nps(search) {
-console.log(search);
-parks;
-});
 
-searchParksBtn.addEventListener('click', function nps(search) {
-console.log(search);
-places;
-    });
 
 // Event listener for search for location
 searchParksBtn.addEventListener('click', parks);
