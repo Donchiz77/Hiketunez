@@ -5,6 +5,7 @@ var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
 var saveHikeBtn = document.querySelector('saveHikeBtn');
 // Modal Variables
+var cards = document.querySelector('.cards');
 var modalCard = document.querySelector('.modal-card');
 var modalTitle = document.querySelector('.card-title');
 var cardInfo = document.querySelector('.card-info');
@@ -29,6 +30,7 @@ searchBtn.addEventListener('click', parks);
 
 //this is the function for parks
 // link https://www.nps.gov/subjects/developer/api-documentation.htm#/
+
 function places() {
     console.log('click');
     fetch('https://developer.nps.gov/api/v1/places?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
@@ -79,13 +81,17 @@ function parks() {
             var addresses = document.createElement('p');
             addresses.textContent = res.data[i].addresses[0];
             addresses.classList.add("modal-address");
-
+            
             var infoCard = document.createElement('div');
+            infoCard.setAttribute("id", `card${i}`);
+            infoCard.setAttribute("class", "model-card");
+            cards.appendChild(infoCard);         
+            
             
             
 
             infoCard.appendChild(fullName);
-            modalCard.appendChild(description);
+            infoCard.apendChild(description);
             modalCard.appendChild(addresses);
             // modalCard.appendChild(saveHikeBtn);
             // modalCard.appendChild(playMusicBtn);

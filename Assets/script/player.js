@@ -1,6 +1,7 @@
 var player;
 var currentPlaylist;
 
+
 function playNextSong(){
     while (currentPlaylist.length){
         var url= currentPlaylist.shift();
