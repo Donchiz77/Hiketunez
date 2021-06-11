@@ -109,15 +109,10 @@ function parks() {
                 console.log(data)
         });
     }*/
-}); 
 
-var map;
-window.onload = function hikeInfo() {
-    console.log('hello');
-    fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
-    map = new Microsoft.Maps.Map(document.getElementById('map'), {showSearchBar: true});
-    
-}
+
+
+
 
 // Fetch song data
 playMusicBtn.addEventListener('click', function () {
