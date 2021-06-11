@@ -14,8 +14,9 @@
 
     <section class="search">
         <div class="locator">
-            <input id="userInput" placeholder="    Enter a city...">
-            <button id="searchBtn" style="font-family: Lato">Go!</button>
+            <input id="userInput" placeholder=" Enter a state...">
+            <button id="searchPlacesBtn" style="font-family: Lato">Places</button>
+            <button id="searchParksBtn" style="font-family: Lato">Parks</button>
             <button id="favoritesBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
         </div>
     </section>
@@ -24,12 +25,11 @@
     <div id="icon"></div>
 
     <section class="results">
-        <div class="icon">
-            <div class="modal-card" id="card">
+        <!-- card is the container -->
+        <!-- infoCard is the element-->
+            <div id="cards"> 
                         <button class="playMusicBtn" style="font-family: Lato">Soundtrack</button>
                         <button id="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Save Hike</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -43,7 +43,10 @@
    
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<<<<<<< HEAD
     
+=======
+>>>>>>> 67dbbbc054be5fcd2fa09371e9c49c45111359c1
     <script src="Assets/script/script.js"></script>
     <script src="Assets/script/player.js"></script>
 </body>

@@ -1,34 +1,37 @@
 // Button Variables
-var searchBtn = document.querySelector('#searchBtn');
+var searchPlacesBtn = document.querySelector('#searchPlacesBtn');
+var searchParksBtn = document.querySelector('#searchParksBtn');
 var userInput = document.querySelector('#userInput');
 var playMusicBtn = document.querySelector('.playMusicBtn');
 var favoriteBtn = document.querySelector('#favoritesBtn');
 var saveHikeBtn = document.querySelector('saveHikeBtn');
 // Modal Variables
-var modalCard = document.querySelector('.modal-card');
+var cards = document.querySelector('#cards');
 var modalTitle = document.querySelector('.card-title');
 var cardInfo = document.querySelector('.card-info');
 var modalAddress = document.querySelector('.modal-address');
 
 
 // Location search
+// if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
+// The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
+// elementname.value.trim() becomes search
 
 // Event listener for search for location
-// This function works. Do not edit!
-searchBtn.addEventListener('click', parks);
+searchParksBtn.addEventListener('click', parks);
+searchPlacesBtn.addEventListener('click', places);
 
-// Need to fix the jumping to bing when searched.
-// var map;
-// window.onload = function hikeInfo() {
+
+// function clearSearch() {
+//     clearInterval();
 //     console.log('hello');
-//     fetch('https://www.bing.com/api/maps/mapcontrol?setmkt=en-us&key=gtuAaeBHapf7XBFBQ4ZV~Xdl98hjuASFWeHOqINZKow~AkyglvfQ4jn1wMwELZatWxyprn5sIvHDEq7GdkuwXyitgVXbPQQW_T7cAmGmJlZZ')
-//     map = new Microsoft.Maps.Map(document.getElementById('map'), {});
-    
 // }
 
 //this is the function for parks
 // link https://www.nps.gov/subjects/developer/api-documentation.htm#/
 function places() {
+    clearSearch;
+
     console.log('click');
     fetch('https://developer.nps.gov/api/v1/places?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
     .then(response => response.json())
@@ -37,26 +40,35 @@ function places() {
             console.log(res.data[i]);
             console.log(res.data[i].title);
             console.log(res.data[i].listingDescription);
+
+            var infoCard = document.createElement('div');
+            infoCard.setAttribute("id", `card${i}`);
+            infoCard.setAttribute("class", "modal-card")
+            cards.appendChild(infoCard);
+
             var title = document.createElement('h1');
             title.textContent = res.data[i].title;
-            modalCard.appendChild(title);
+            infoCard.appendChild(title);
             
             var listingDescription = document.createElement('p');
             listingDescription.textContent = res.data[i].listingDescription;
-            modalCard.appendChild(listingDescription);
+            infoCard.appendChild(listingDescription);
             title.classList.add("modal-title");
             listingDescription.classList.add("modal-description");
+
+            
               
         }
-        
     });
-    
+     //not working
 }
 
 
 //This function pulls parks across the U.S.
 //The address pulling is not working. Returning object
 function parks() {
+    clearSearch;
+
     console.log('hello');
     fetch('https://developer.nps.gov/api/v1/parks?stateCode=&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz')
     .then(response => response.json())
@@ -80,14 +92,17 @@ function parks() {
             addresses.classList.add("modal-address");
 
             var infoCard = document.createElement('div');
+            infoCard.setAttribute("id", `card${i}`);
+            infoCard.setAttribute("class", "modal-card")
+            cards.appendChild(infoCard);
             
             
 
             infoCard.appendChild(fullName);
-            modalCard.appendChild(description);
-            modalCard.appendChild(addresses);
-            // modalCard.appendChild(saveHikeBtn);
-            // modalCard.appendChild(playMusicBtn);
+            infoCard.appendChild(description);
+            // modalCard.appendChild(addresses);
+            infoCard.appendChild(saveHikeBtn);
+            infoCard.appendChild(playMusicBtn);
 
             var line1 = res.data[i].addresses[0].line1;
             var city = res.data[i].addresses[0].city;
@@ -111,6 +126,7 @@ function parks() {
         }
     });
 }
+<<<<<<< HEAD
 // searchBtn.addEventListener('click', nps());
 // fetch('https://www.metaweather.com/api//location/search/?query=')
     
@@ -136,23 +152,16 @@ function parks() {
 
 
 
+=======
+>>>>>>> 67dbbbc054be5fcd2fa09371e9c49c45111359c1
 
 // Fetch song data
-playMusicBtn.addEventListener('click', function () {
-/*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
-    method: 'GET',
-})
-    .then(function (response) {
-        console.log(response)
-    })
-    .then(function (data) {
-        // add in what we really want it to do with the data
-        console.log(data) 
-    }); */
-    $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
-        playPlaylist(data.split("\n"));
-    }) 
-});
+// playMusicBtn.addEventListener('click', function () {
+
+//     $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+//         playPlaylist(data.split("\n"));
+//     }) 
+// });
 
 // Link hiking info to song data
 
