@@ -72,14 +72,25 @@ function places() {
             addressBtn.innerHTML = 'Address';
             addressBtn.classList.add("addressBtn");
             cards.appendChild(addressBtn);
-      
-        } 
+
+            playMusicBtn.addEventListener
+            saveHikeBtn.addEventListener
+            // $('.saveBtn').on('click', function () {
+            //     var input = $(this).siblings('.description').val();
+            //     var time = $(this).parent().attr('id');
+        
+            //     localStorage.setItem(time, input);
+            // });
+            
+
+        }
+    });
+};
         
        
-    });
+
     //  (res.data[i].listingDescription === null) {
-    //     cards.style.display = "none";
-}
+    //     cards.style.display = "none"
 
 
 //This function pulls parks across the U.S.
@@ -139,6 +150,7 @@ function parks() {
             // infoCard.appendChild(saveHikeBtn);
             // infoCard.appendChild(playMusicBtn);
 
+            //Modal Info for Address
             var line1 = res.data[i].addresses[0].line1;
             var city = res.data[i].addresses[0].city;
             var state = res.data[i].addresses[0].stateCode;
@@ -158,6 +170,8 @@ function parks() {
             modalAddress.appendChild(city);
             modalAddress.appendChild(state);
             modalAddress.appendChild(postal);
+
+            addressBtn.addEventListener('click', function modal() {
         }
     });
 }
