@@ -49,7 +49,15 @@ function playPlaylist(playlist){
     console.log(playlist);
     currentPlaylist=playlist;
     playNextSong();
+    $("#overlay").show();
+    $("#player-popup").show();
 } 
+
+function closePlayerPopup(){
+    $("#overlay").hide();
+    $("#player-popup").hide();
+    player.stopVideo();
+}
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";

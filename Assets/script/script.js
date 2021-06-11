@@ -70,7 +70,13 @@ function places() {
         addressBtn.classList.add("addressBtn");
         cards.appendChild(addressBtn);
 
-        playMusicBtn.addEventListener;
+        playMusicBtn.addEventListener("click", function () {
+            $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
+              data
+            ) {
+              playPlaylist(data.split("\n"));
+            });
+          });
         saveHikeBtn.addEventListener;
         // $('.saveBtn').on('click', function () {
         //     var input = $(this).siblings('.description').val();
@@ -166,7 +172,7 @@ function parks() {
         modalAddress.appendChild(postal);
 
         addressBtn.addEventListener("click", function modal() {
-            
+
         });
       }
     });
@@ -175,14 +181,6 @@ function parks() {
 // if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
 // The ns function should have a parameter like this nps(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
 // elementname.value.trim() becomes search
-
-playMusicBtn.addEventListener("click", function () {
-  $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
-    data
-  ) {
-    playPlaylist(data.split("\n"));
-  });
-});
 
 // Link hiking info to song data
 
