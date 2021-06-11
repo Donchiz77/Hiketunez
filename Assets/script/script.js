@@ -158,7 +158,6 @@ function parks() {
 // The ns function should have a parameter like this ns(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
 // elementname.value.trim() becomes search
 
-<<<<<<< HEAD
 //playMusicBtn.addEventListener('click', function () {
     /*   fetch('https://openwhyd.org/adrien/playlist/61/?format=json', {
         method: 'GET',
@@ -175,7 +174,6 @@ function parks() {
         //}) 
    // });
   
-=======
 
     // Fetch data from apis to show on map
   /*  function test (hikeInfo) {
@@ -190,7 +188,7 @@ function parks() {
                 console.log(data)
         });
     }*/
-}); 
+//}); 
 
 var map;
 window.onload = function hikeInfo() {
@@ -216,7 +214,6 @@ playMusicBtn.addEventListener('click', function () {
         playPlaylist(data.split("\n"));
     }) 
 });
->>>>>>> 14aa08547408ca08a7ea33fa227e7c15d2b57b71
 
 // Fetch song data
 //playMusicBtn.addEventListener('click', function () {
