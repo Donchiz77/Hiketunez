@@ -13,15 +13,15 @@
         <button class= "btn btn-four" id="homeBtn" onclick="window.location.href = 'index.html';" style="font-family: Lato">Home</button>
         <button class= "btn btn-four" id="locatorBtn" onclick="window.location.href = 'location.html';" style="font-family: Lato">Locator</button>
         <button class= "btn btn-four" id="savedHikesBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
-        
     </nav>
 
    
 
     <section class="search">
         <div class="locator">
-            <input id="userInput" placeholder="    Enter a city...">
-            <button id="searchBtn" style="font-family: Lato">Go!</button>
+            <input id="userInput" placeholder=" Enter a state...">
+            <button id="searchPlacesBtn" style="font-family: Lato">Places</button>
+            <button id="searchParksBtn" style="font-family: Lato">Parks</button>
             <button id="favoritesBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
         </div>
     </section>
@@ -30,12 +30,11 @@
     <div id="icon"></div>
 
     <section class="results">
-        <div class="icon">
-            <div id="cards">
-          <button class="playMusicBtn" style="font-family: Lato">Soundtrack</button>
-                        <button id="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Save Hike</button> 
-             </div>
-            </div>
+        <!-- card is the container -->
+        <!-- infoCard is the element-->
+            <div id="cards"> 
+                        <button class="playMusicBtn" style="font-family: Lato">Soundtrack</button>
+                        <button id="saveHikeBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Save Hike</button>
             </div>
         </div>
     </section>
@@ -49,10 +48,6 @@
    
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
-      async
-    ></script>
     <script src="Assets/script/script.js"></script>
     <script src="Assets/script/player.js"></script>
 </body>
