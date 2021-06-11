@@ -160,13 +160,13 @@ function parks() {
     });
 }
 
-// Fetch song data
-// playMusicBtn.addEventListener('click', function () {
+ Fetch song data
+ playMusicBtn.addEventListener('click', function () {
 
-//     $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
-//         playPlaylist(data.split("\n"));
-//     }) 
-// });
+     $.get('https://openwhyd.org/adrien/playlist/61/?format=links').done(function(data){
+         playPlaylist(data.split("\n"));
+     }) 
+ });
 
 // Fetch song data
 //playMusicBtn.addEventListener('click', function () {
