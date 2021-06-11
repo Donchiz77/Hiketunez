@@ -72,7 +72,7 @@ function places() {
             addressBtn.classList.add("addressBtn");
             cards.appendChild(addressBtn);
 
-            playMusicBtn.addEventListener
+            playMusicBtn.addEventListener('click', playYouTube)
             saveHikeBtn.addEventListener
             // $('.saveBtn').on('click', function () {
             //     var input = $(this).siblings('.description').val();
@@ -170,8 +170,9 @@ function parks() {
             modalAddress.appendChild(state);
             modalAddress.appendChild(postal);
 
-            addressBtn.addEventListener('click', function modal() {
-        }
+        //     addressBtn.addEventListener('click', function modal() {
+        // }
+    }
     });
 }
 
