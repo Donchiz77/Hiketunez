@@ -9,3 +9,4 @@ function saveHike(data) {
 }
 
 if (savedHikes) displayHikes(savedHikes);
+

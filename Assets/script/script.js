@@ -64,7 +64,7 @@ function displayHikes(hikes){
             addressBtn.classList.add("addressBtn");
             infoCard.appendChild(addressBtn);
         }
-
+        
 
         playMusicBtn.addEventListener("click", function () {
             $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
