@@ -1,6 +1,7 @@
 // Button Variables
 var searchPlacesBtn = document.querySelector("#searchPlacesBtn");
 var searchParksBtn = document.querySelector("#searchParksBtn");
+var clearBtn = document.getElementById('clearBtn');
 var userInput = document.querySelector("#userInput");
 // Modal Variables
 var cards = document.querySelector("#cards");
@@ -15,6 +16,9 @@ var hikeData = [];
 // Event listener for search for location
 searchParksBtn.addEventListener("click", parks);
 searchPlacesBtn.addEventListener("click", places);
+clearBtn.addEventListener("click", clear)
+
+
 
 function clearChildren( parent ) {
     if( parent === null ) return;
@@ -81,6 +85,13 @@ function displayHikes(hikes){
      
     }
 }
+
+function clear() {
+  var myObj = document.getElementById("modal-card");
+  myObj.remove();
+}
+
+
 //this is the function for parks
 // link https://www.nps.gov/subjects/developer/api-documentation.htm#/
 function places() {
