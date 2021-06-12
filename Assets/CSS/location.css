@@ -85,10 +85,10 @@ body, html{
 }
 
 .playMusicBtn {
-        width: 100px;
-        height: 30px;
-        margin-left: 5px;
-        border-radius: 15px;
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
 }
 
 .saveHikeBtn {
@@ -98,10 +98,23 @@ body, html{
     border-radius: 15px;
 }
 
+.addressBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 /* Card Design*/
 .modal-card {
     border-radius:15px;
-    padding: 20px;
+    padding: 40px;
     background-color:#666;
     color: #fff;
     height: 300px;
@@ -112,8 +125,6 @@ body, html{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding:15px;
-     
 } 
 
 .modal-title {

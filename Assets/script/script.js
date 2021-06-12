@@ -206,11 +206,9 @@ function parks() {
     });
 }
 
-// if you want to use the forms value in the ns function.  You need to pass it in to the ns like this ns(elementname.value.trim()).
-// The ns function should have a parameter like this nps(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
-// elementname.value.trim() becomes search
 
-// Link hiking info to song data
+
+
 
 // Modal for hike information when clicked on
 
