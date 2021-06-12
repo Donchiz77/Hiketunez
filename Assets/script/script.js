@@ -31,7 +31,7 @@ function clearChildren( parent ) {
     }
 }
 
-function displayHikes(hikes){
+function displayHikes(hikes, isSavedHikes){
     clearChildren(cards);
     for (i = 0; i < hikes.length; i++) {
         //Building Card
@@ -56,11 +56,30 @@ function displayHikes(hikes){
         playMusicBtn.classList.add("playMusicBtn");
         infoCard.appendChild(playMusicBtn);
 
-        var saveHikeBtn = document.createElement("button");
-        saveHikeBtn.innerHTML = "Save Hike";
-        saveHikeBtn.classList.add("saveHikeBtn");
-        saveHikeBtn.setAttribute("id", `save${i}`);
-        infoCard.appendChild(saveHikeBtn);
+        if (isSavedHikes){
+
+            var clearHikeBtn = document.createElement("button");
+            clearHikeBtn.innerHTML = "clear Hike";
+            clearHikeBtn.classList.add("clearHikeBtn");
+            clearHikeBtn.setAttribute("id", `clear${i}`);
+            infoCard.appendChild(clearHikeBtn);
+            clearHikeBtn.addEventListener("click", function(){
+                var index = this.id.substring(5);
+                removeHike(index);
+            });
+        }   else {
+            var saveHikeBtn = document.createElement("button");
+            saveHikeBtn.innerHTML = "Save Hike";
+            saveHikeBtn.classList.add("saveHikeBtn");
+            saveHikeBtn.setAttribute("id", `save${i}`);
+            infoCard.appendChild(saveHikeBtn);
+            saveHikeBtn.addEventListener("click", function(){
+                var index = this.id.substring(4);
+                saveHike(hikeData[index]);
+            }
+            );
+    
+        }
 
         if (hikes[i].address){
             var addressBtn = document.createElement("button");
@@ -77,12 +96,7 @@ function displayHikes(hikes){
                 playPlaylist(data.split("\n"));
             });
         });
-        saveHikeBtn.addEventListener("click", function(){
-            var index = this.id.substring(4);
-            saveHike(hikeData[index]);
-        }
-        );
-     
+        
     }
 }
 
@@ -116,7 +130,7 @@ function places() {
             description: res.data[i].listingDescription
         });
       }
-      displayHikes(hikeData);
+      displayHikes(hikeData, false);
     });
 }
 
@@ -215,7 +229,7 @@ function parks() {
 
         }); */
       } 
-      displayHikes(hikeData);
+      displayHikes(hikeData, false);
     });
 }
 
