@@ -8,4 +8,11 @@ function saveHike(data) {
     localStorage.setItem("HikeTunez Saved Hikes", JSON.stringify(savedHikes));
 }
 
-if (savedHikes) displayHikes(savedHikes);
+function removeHike(index){
+    savedHikes.splice(index, 1);
+    localStorage.setItem("HikeTunez Saved Hikes", JSON.stringify(savedHikes));
+    displayHikes(savedHikes, true);
+}
+
+
+if (savedHikes) displayHikes(savedHikes, true);
