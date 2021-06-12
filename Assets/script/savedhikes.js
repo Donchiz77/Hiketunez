@@ -1,6 +1,7 @@
 var savedHikes = JSON.parse( localStorage.getItem( "HikeTunez Saved Hikes" ) );
 
 function saveHike(data) {
+    console.log("working?");
     if( savedHikes === null ) {
         savedHikes = [];
     }

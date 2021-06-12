@@ -105,27 +105,24 @@ body, html{
     border-radius: 15px;
 }
 
-.buttons {
-    display: flex;
+/* Card Design */
+#cards {
+    display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-}
+    padding:15px;
+} 
 
-/* Card Design*/
+
 .modal-card {
     border-radius:15px;
-    padding: 40px;
+    padding: 20px;
     background-color:#666;
     color: #fff;
     height: 300px;
     width: 300px;
+   
 }
-
- #cards {
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-} 
 
 .modal-title {
     padding:20px;
@@ -173,5 +170,4 @@ body, html{
     display: none;
 }
 
-
-/* Need Mobile styling*/
+/* Need mobile styling */

@@ -107,13 +107,9 @@ function places() {
     });
 }
 
-//  (res.data[i].listingDescription === null) {
-//     cards.style.display = "none"
 
-//This function pulls parks across the U.S.
-//The address pulling is not working. Returning object
 function parks() {
-  // clearSearch;
+
 
   console.log("hello");
   fetch(
@@ -214,8 +210,3 @@ function parks() {
 
 // Event listener for start hike button that prompts music to play
 
-// Local storage favorite hikes
-
-// Event listener for favorite hikes button
-
-// Page for favorite hikes

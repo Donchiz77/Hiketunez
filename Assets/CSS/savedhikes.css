@@ -47,24 +47,40 @@ p {
     justify-content:center;
 }
 
-.savedHikes {
-    display: flex;
+#cards {
+    display:flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    
-}
+    padding:15px;
+} 
+
 
 .modal-card {
-     background-color: #f4f4f4;
-     height: 400px;
-     width: 400px;
-     display:flex;
-     justify-content: center;
-     align-items: center;
+    border-radius:15px;
+    padding: 20px;
+    background-color:#666;
+    color: #fff;
+    height: 300px;
+    width: 300px;
+   
 }
 
-.playMusicBtn {
-    border-radius: 15px;
-    margin-top: 300px;
+.modal-title {
+    padding:20px;
+    font-size: 30px;
+    font-family: "lato", sans-serif;
+    line-height: 5px;
 }
+
+.modal-description {
+    font-size: 20px;
+    font-family: "lato", sans-serif;
+    line-height: 23px;
+}
+
+.modal-address {
+    font-size: 15px;
+    font-family: "lato", sans-serif;
+}
+
+/* Need mobile styling */
