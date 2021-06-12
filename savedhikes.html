@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hikeTunezSavedHikes</title>
-    <link rel="stylesheet" href="Assets/CSS/savedhikes.css">
+    <!--<link rel="stylesheet" href="Assets/CSS/savedhikes.css"> -->
+    <link rel="stylesheet" href="Assets/CSS/location.css">
 </head>
 <body>
 
@@ -21,13 +22,18 @@
         </div>
     </section>
 
-    <div id="player"></div>
+    <div id="overlay"></div>
+    <div id="player-popup" class="popup">
+        <div id="player"></div>
+        <button onclick="closePlayerPopup()">Close</button>
+    </div>
 
 
     <section class="address">
         <div class="modal-address"></div>
     </section>
     <script src="Assets/script/script.js"></script>
+    <script src="Assets/script/player.js"></script>
     <script src="Assets/script/savedhikes.js"></script>
 </body>
 </html>

@@ -7,6 +7,7 @@ var cards = document.querySelector("#cards");
 var modalTitle = document.querySelector(".card-title");
 var cardInfo = document.querySelector(".card-info");
 var modalAddress = document.querySelector(".modal-address");
+var hikeData = [];
 
 // Location search
 // if you want to use the forms value in the nps function.  You need to pass it in to the nps like this nps(elementname.value.trim()).
@@ -23,22 +24,20 @@ searchPlacesBtn.addEventListener("click", places);
 //     clearInterval();
 //     console.log('hello');
 // }
+function clearChildren( parent ) {
+    if( parent === null ) return;
 
+    var node = parent.firstChild;
+    while( node ) {
+        var remove = node;
+        node = node.nextSibling;
+        parent.removeChild( remove );
+    }
+}
 
-function places() {
-  // clearSearch;
-
-  console.log("places is workings");
-  fetch(
-    "https://developer.nps.gov/api/v1/places?stateCode=nc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz"
-  )
-    .then((response) => response.json())
-    .then((res) => {
-      for (i = 0; i < res.data.length; i++) {
-        console.log(res.data[i]);
-        console.log(res.data[i].title);
-        console.log(res.data[i].listingDescription);
-
+function displayHikes(hikes){
+    clearChildren(cards);
+    for (i = 0; i < hikes.length; i++) {
         //Building Card
         var infoCard = document.createElement("div");
         infoCard.setAttribute("id", `card${i}`);
@@ -46,11 +45,11 @@ function places() {
         cards.appendChild(infoCard);
 
         var title = document.createElement("h1");
-        title.textContent = res.data[i].title;
+        title.textContent = hikes[i].name;
         infoCard.appendChild(title);
 
         var listingDescription = document.createElement("p");
-        listingDescription.textContent = res.data[i].listingDescription;
+        listingDescription.textContent = hikes[i].description;
         infoCard.appendChild(listingDescription);
         title.classList.add("modal-title");
         listingDescription.classList.add("modal-description");
@@ -64,28 +63,57 @@ function places() {
         var saveHikeBtn = document.createElement("button");
         saveHikeBtn.innerHTML = "Save Hike";
         saveHikeBtn.classList.add("saveHikeBtn");
+        saveHikeBtn.setAttribute("id", `save${i}`);
         cards.appendChild(saveHikeBtn);
 
-        var addressBtn = document.createElement("button");
-        addressBtn.innerHTML = "Address";
-        addressBtn.classList.add("addressBtn");
-        cards.appendChild(addressBtn);
+        if (hikes[i].address){
+            var addressBtn = document.createElement("button");
+            addressBtn.innerHTML = "Address";
+            addressBtn.classList.add("addressBtn");
+            cards.appendChild(addressBtn);
+        }
+
 
         playMusicBtn.addEventListener("click", function () {
             $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
-              data
+                data
             ) {
-              playPlaylist(data.split("\n"));
+                playPlaylist(data.split("\n"));
             });
-          });
-        saveHikeBtn.addEventListener;
-        // $('.saveBtn').on('click', function () {
-        //     var input = $(this).siblings('.description').val();
-        //     var time = $(this).parent().attr('id');
+        });
+        saveHikeBtn.addEventListener("click", function(){
+            var index = this.id.substring(4);
+            saveHike(hikeData[index]);
+        }
+        );
+     
+    }
+}
+//this is the function for parks
+// link https://www.nps.gov/subjects/developer/api-documentation.htm#/
+function places() {
+  // clearSearch;
 
-        //     localStorage.setItem(time, input);
-        // });
+  console.log("places is workings");
+  fetch(
+    "https://developer.nps.gov/api/v1/places?stateCode=nc&api_key=HKetcGoDSbeBjngR2as3P2XiTS7jM8yuNceJ2roz"
+  )
+    .then((response) => response.json())
+    .then((res) => {
+        //clearing out previous hike data
+        hikeData = [];
+      for (i = 0; i < res.data.length; i++) {
+        console.log(res.data[i]);
+        console.log(res.data[i].title);
+        console.log(res.data[i].listingDescription);
+
+        hikeData.push({
+            id: hikeData.length,
+            name: res.data[i].title,
+            description: res.data[i].listingDescription
+        });
       }
+      displayHikes(hikeData);
     });
 }
 
@@ -103,6 +131,8 @@ function parks() {
   )
     .then((response) => response.json())
     .then((res) => {
+        //clearing out old hike data
+        hikeData = [];
       for (i = 0; i < res.data.length; i++) {
         console.log(res.data[i]);
         console.log(res.data[i].fullName);
@@ -110,8 +140,14 @@ function parks() {
         console.log(
           res.data[i].addresses[0].line1 + res.data[i].addresses[0].city
         );
-
-        //Building Card
+        hikeData.push({
+            id: hikeData.length,
+            name: res.data[i].fullName,
+            description: res.data[i].description,
+            address: res.data[i].addresses[0]
+        });
+        //Building Card 
+        /*
         var fullName = document.createElement("h1");
         fullName.textContent = res.data[i].fullName;
         fullName.classList.add("modal-title");
@@ -174,8 +210,9 @@ function parks() {
 
         addressBtn.addEventListener("click", function modal() {
 
-        });
-      }
+        }); */
+      } 
+      displayHikes(hikeData);
     });
 }
 
