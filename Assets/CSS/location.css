@@ -57,13 +57,7 @@ body, html{
     
 }
 
-#userInput {
-    padding-top: 5px;
-    height: 30px;
-    width: 300px;
-    border-radius: 15px;
-}
-
+/* Nav Buttons */
 #searchParksBtn {
     width:100px;
     height: 30px;
@@ -85,23 +79,61 @@ body, html{
     border-radius: 15px;
 }
 
-
-.modal-card {
-    background-color: #453ba1;
-    height: 400px;
-    width: 400px;
-    display:flex;
+#favoritesBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
 }
 
-/* #card {
-    background-color: #453ba1;
-     height: 400px;
-     width: 400px;
-     display:flex;
+#clearBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.playMusicBtn {
+        width: 100px;
+        height: 30px;
+        margin-left: 5px;
+        border-radius: 15px;
+}
+
+.saveHikeBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.addressBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+/* Card Design*/
+.modal-card {
+    border-radius:15px;
+    padding: 20px;
+    background-color:#666;
+    color: #fff;
+    height: 300px;
+    width: 300px;
+}
+
+ #cards {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:15px;
      
-} */
+} 
 
 .modal-title {
+    padding:20px;
     font-size: 30px;
     font-family: "lato", sans-serif;
     line-height: 5px;
@@ -147,24 +179,4 @@ body, html{
 }
 
 
-/* .playMusicBtn {
-    border-radius: 15px;
-    float: left;
-    margin-top: 365px;
-    margin-left: 10px;
-    
-}
-
-#saveHikeBtn {
-    border-radius: 15px;
-    float: right;
-    margin-top: 365px;
-    margin-left: 225px;
-} */
-
-#map {
-    height: 100%;
-  }
-
-  
-
+/* Need Mobile styling*/

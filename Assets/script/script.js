@@ -9,7 +9,8 @@ var cardInfo = document.querySelector(".card-info");
 var modalAddress = document.querySelector(".modal-address");
 var hikeData = [];
 
-// Location search
+
+
 
 // Event listener for search for location
 searchParksBtn.addEventListener("click", parks);
@@ -49,21 +50,21 @@ function displayHikes(hikes){
         var playMusicBtn = document.createElement("button");
         playMusicBtn.innerHTML = "Soundtrack";
         playMusicBtn.classList.add("playMusicBtn");
-        cards.appendChild(playMusicBtn);
+        infoCard.appendChild(playMusicBtn);
 
         var saveHikeBtn = document.createElement("button");
         saveHikeBtn.innerHTML = "Save Hike";
         saveHikeBtn.classList.add("saveHikeBtn");
         saveHikeBtn.setAttribute("id", `save${i}`);
-        cards.appendChild(saveHikeBtn);
+        infoCard.appendChild(saveHikeBtn);
 
         if (hikes[i].address){
             var addressBtn = document.createElement("button");
             addressBtn.innerHTML = "Address";
             addressBtn.classList.add("addressBtn");
-            cards.appendChild(addressBtn);
+            infoCard.appendChild(addressBtn);
         }
-
+        
 
         playMusicBtn.addEventListener("click", function () {
             $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
