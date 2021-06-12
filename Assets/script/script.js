@@ -27,12 +27,16 @@ function clearChildren( parent ) {
 
 function displayHikes(hikes){
     clearChildren(cards);
+    console.log(hikes);
     for (i = 0; i < hikes.length; i++) {
         //Building Card
         var infoCard = document.createElement("div");
         infoCard.setAttribute("id", `card${i}`);
         infoCard.setAttribute("class", "modal-card");
-        cards.appendChild(infoCard);
+        if (hikes[i].description !== "") {
+          cards.appendChild(infoCard);
+        }
+        
 
         var title = document.createElement("h1");
         title.textContent = hikes[i].name;
@@ -61,7 +65,11 @@ function displayHikes(hikes){
             addressBtn.innerHTML = "Address";
             addressBtn.classList.add("addressBtn");
             infoCard.appendChild(addressBtn);
+
+            
         }
+       
+    }
 
 
         playMusicBtn.addEventListener("click", function () {
@@ -77,8 +85,8 @@ function displayHikes(hikes){
         }
         );
      
-    }
 }
+
 //this is the function for parks
 // link https://www.nps.gov/subjects/developer/api-documentation.htm#/
 function places() {
@@ -202,8 +210,36 @@ function parks() {
     });
 }
 
+// /Modal Info for Address
 
 
+addressBtn.addEventListener('click', function () {
+
+        var addresses = document.createElement("p");
+        addresses.textContent = res.data[i].addresses[0];
+        addresses.classList.add("modal-address");
+
+  var line1 = res.data[i].addresses[0].line1;
+  console.log(line1);
+  var city = res.data[i].addresses[0].city;
+  var state = res.data[i].addresses[0].stateCode;
+  var postal = res.data[i].addresses[0].postalCode;
+  console.log(line1 + ", " + city + ", " + state + ", " + postal);
+
+  line1 = document.createElement("p");
+  line1.classList.add("modal-address");
+  city = document.createElement("p");
+  city.classList.add("modal-address");
+  state = document.createElement("p");
+  state.classList.add("modal-address");
+  postal = document.createElement("p");
+  postal.classList.add("modal-address");
+
+  modalAddress.appendChild(line1);
+  modalAddress.appendChild(city);
+  modalAddress.appendChild(state);
+  modalAddress.appendChild(postal);
+});
 
 
 // Modal for hike information when clicked on

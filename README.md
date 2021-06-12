@@ -1,4 +1,7 @@
 # Hiketunez
+https://github.com/Donchiz77/Hiketunez
+
+https://donchiz77.github.io/Hiketunez/savedhikes.html
 
 The website that we created is used to locating parks and places in North Caroline to hike at. The purpose of creating this site is to locate different hiking places plus have a soundtrack playing while you hike to get you feeling groovy.
 
