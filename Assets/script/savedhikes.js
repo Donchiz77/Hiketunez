@@ -7,3 +7,5 @@ function saveHike(data) {
     savedHikes.push(data);
     localStorage.setItem("HikeTunez Saved Hikes", JSON.stringify(savedHikes));
 }
+
+if (savedHikes) displayHikes(savedHikes);
