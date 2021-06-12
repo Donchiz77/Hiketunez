@@ -55,13 +55,7 @@ body, html{
     
 }
 
-#userInput {
-    padding-top: 5px;
-    height: 30px;
-    width: 300px;
-    border-radius: 15px;
-}
-
+/* Nav Buttons */
 #searchParksBtn {
     width:100px;
     height: 30px;
@@ -83,23 +77,34 @@ body, html{
     border-radius: 15px;
 }
 
-
-.modal-card {
-    background-color: #453ba1;
-    height: 400px;
-    width: 400px;
-    display:flex;
+#favoritesBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
 }
 
-/* #card {
-    background-color: #453ba1;
-     height: 400px;
-     width: 400px;
-     display:flex;
-     
-} */
+/* Card Design */
+#cards {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:15px;
+} 
+
+
+.modal-card {
+    border-radius:15px;
+    padding: 20px;
+    background-color:#666;
+    color: #fff;
+    height: 300px;
+    width: 300px;
+   
+}
 
 .modal-title {
+    padding:20px;
     font-size: 30px;
     font-family: "lato", sans-serif;
     line-height: 5px;
@@ -116,18 +121,32 @@ body, html{
     font-family: "lato", sans-serif;
 }
 
-/* .playMusicBtn {
-    border-radius: 15px;
-    float: left;
-    margin-top: 365px;
-    margin-left: 10px;
-    
+.popup {
+    position: fixed;
+    top: 218px;
+    left: 50%;
+    width: 600px;
+    height: 350px;
+    background-color: rgb(53, 52, 52);
+    border: black solid 1px; 
+    margin-left: -300px;
+    display: none; 
 }
 
-#saveHikeBtn {
-    border-radius: 15px;
-    float: right;
-    margin-top: 365px;
-    margin-left: 225px;
-} */
+.popup button {
+    margin: 5px auto;
+    width: 100px;
+    display: block;
+}
 
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 45%;
+    top: 0%;
+    display: none;
+}
+
+/* Need mobile styling */
