@@ -85,19 +85,21 @@ body, html{
 
 
 .modal-card {
-    background-color: #453ba1;
-    height: 400px;
-    width: 400px;
-    display:flex;
+    border-radius:15px;
+    padding: 20px;
+    background-color:#666;
+    color: #fff;
+    height: 300px;
+    width: 300px;
 }
 
-/* #card {
-    background-color: #453ba1;
-     height: 400px;
-     width: 400px;
-     display:flex;
+ #cards {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:15px;
      
-} */
+} 
 
 .modal-title {
     font-size: 30px;

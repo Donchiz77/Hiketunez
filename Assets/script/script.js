@@ -58,19 +58,19 @@ function displayHikes(hikes){
         var playMusicBtn = document.createElement("button");
         playMusicBtn.innerHTML = "Soundtrack";
         playMusicBtn.classList.add("playMusicBtn");
-        cards.appendChild(playMusicBtn);
+        infoCard.appendChild(playMusicBtn);
 
         var saveHikeBtn = document.createElement("button");
         saveHikeBtn.innerHTML = "Save Hike";
         saveHikeBtn.classList.add("saveHikeBtn");
         saveHikeBtn.setAttribute("id", `save${i}`);
-        cards.appendChild(saveHikeBtn);
+        infoCard.appendChild(saveHikeBtn);
 
         if (hikes[i].address){
             var addressBtn = document.createElement("button");
             addressBtn.innerHTML = "Address";
             addressBtn.classList.add("addressBtn");
-            cards.appendChild(addressBtn);
+            infoCard.appendChild(addressBtn);
         }
 
 
