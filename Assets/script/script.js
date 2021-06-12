@@ -10,6 +10,8 @@ var modalAddress = document.querySelector(".modal-address");
 var hikeData = [];
 
 
+
+
 // Event listener for search for location
 searchParksBtn.addEventListener("click", parks);
 searchPlacesBtn.addEventListener("click", places);
@@ -81,7 +83,7 @@ function displayHikes(hikes, isSavedHikes){
             addressBtn.classList.add("addressBtn");
             infoCard.appendChild(addressBtn);
         }
-
+        
 
         playMusicBtn.addEventListener("click", function () {
             $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
