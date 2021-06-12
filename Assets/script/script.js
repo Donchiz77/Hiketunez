@@ -9,19 +9,11 @@ var cardInfo = document.querySelector(".card-info");
 var modalAddress = document.querySelector(".modal-address");
 var hikeData = [];
 
-// Location search
-// if you want to use the forms value in the nps function.  You need to pass it in to the nps like this nps(elementname.value.trim()).
-// The nps function should have a parameter like this nps(search).  You can call the parameter whatever you want.  Just know that the parameter will take on the value of the argument that gets passed in.
-// elementname.value.trim() becomes search
 
 // Event listener for search for location
 searchParksBtn.addEventListener("click", parks);
 searchPlacesBtn.addEventListener("click", places);
 
-// function clearSearch() {
-//     clearInterval();
-//     console.log('hello');
-// }
 function clearChildren( parent ) {
     if( parent === null ) return;
 
