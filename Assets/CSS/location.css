@@ -84,6 +84,13 @@ body, html{
     border-radius: 15px;
 }
 
+#clearBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
 .playMusicBtn {
         width: 100px;
         height: 30px;
@@ -92,6 +99,13 @@ body, html{
 }
 
 .saveHikeBtn {
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+    border-radius: 15px;
+}
+
+.addressBtn {
     width: 100px;
     height: 30px;
     margin-left: 5px;
