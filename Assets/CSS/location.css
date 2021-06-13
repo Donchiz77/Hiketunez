@@ -176,5 +176,18 @@ body, html{
     display: none;
 }
 
+#address-popup {
+    color: blanchedalmond;
+    font-size: xx-large;
+    padding: 20px;
+}
+
+#state {
+    display: inline-block;
+}
+
+#zip {
+    display: inline-block;
+}
 
 /* Need Mobile styling*/
