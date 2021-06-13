@@ -33,7 +33,7 @@ function displayHikes(hikes, isSavedHikes){
         //Building Card
         var infoCard = document.createElement("div");
         infoCard.setAttribute("id", `card${i}`);
-        infoCard.setAttribute("class", "modal-card");
+        infoCard.setAttribute("class", "cards");
         cards.appendChild(infoCard);
 
         var title = document.createElement("h1");
@@ -43,8 +43,8 @@ function displayHikes(hikes, isSavedHikes){
         var listingDescription = document.createElement("p");
         listingDescription.textContent = hikes[i].description;
         infoCard.appendChild(listingDescription);
-        title.classList.add("modal-title");
-        listingDescription.classList.add("modal-description");
+        title.classList.add("cards");
+        listingDescription.classList.add("cards");
 
         //Buttons
         var playMusicBtn = document.createElement("button");

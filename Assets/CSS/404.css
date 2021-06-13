@@ -1,7 +1,6 @@
 html, body {
-    background-image: url("../Images/404-page.jpg");
     font-family: 'Open Sans', serif;
-    height: 100%;
+    max-height: 100%;
 }
 a{color:white}
 
@@ -12,6 +11,11 @@ align-items: center;
 color: white;
 margin-top: 100px;
 text-shadow: 3px 2px black;
-}  
+} 
+
+.container{
+  background-image: url("../Images/404-page.jpg");
+  max-height: 100%
+}
 
 

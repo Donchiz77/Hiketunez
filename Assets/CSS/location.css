@@ -1,4 +1,4 @@
-body, html{
+/* body, html{
     height: 100%;
     margin: 0;
     font-size: 25px;
@@ -8,11 +8,21 @@ body, html{
     color: #666;
 };
 
+body{
+    background-image: url("Desert.jpg");
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
 
 
 /*Header*/
 
-.jtext{
+/* .jtext{
     position: absolute;
     top: 50%;
     width: 100%;
@@ -21,30 +31,30 @@ body, html{
     font-size: 27px;
     letter-spacing: 8px;
     text-transform: uppercase;
-}
+};
 
 .sec1{
     text-align: center;
     padding: 50px 80px;   
-   }
+   };
    
    .sec1-light{
      background-color: #f4f4f4;
      color: #666;  
-   }
+   };
 
    .jtext .boarder{
     background-color: #111;
     color: #fff;
     padding: 20px;
-}
+};
 
 .search {
     display: flex;
     background-color:#666;
     height: 10%;
     align-items: center;
-}
+};
 
 .locator  {
     display: flex;
@@ -53,100 +63,68 @@ body, html{
     height: 50%;
     width: 150%;
     
-}
+};
 
-/* Nav Buttons */
+#userInput {
+    padding-top: 5px;
+    height: 30px;
+    width: 300px;
+    border-radius: 15px;
+};
+
 #searchParksBtn {
     width:100px;
     height: 30px;
     margin-left: 5px;
     border-radius: 15px;
-}
+};
 
 #searchPlacesBtn {
     width:100px;
     height: 30px;
     margin-left: 5px;
     border-radius: 15px;
-}
+};
 
 #saveHikeBtn {
     width: 100px;
     height: 30px;
     margin-left: 5px;
     border-radius: 15px;
-}
+};
 
-#favoritesBtn {
-    width: 100px;
-    height: 30px;
-    margin-left: 5px;
-    border-radius: 15px;
-}
 
-#clearBtn {
-    width: 100px;
-    height: 30px;
-    margin-left: 5px;
-    border-radius: 15px;
-}
-
-.playMusicBtn {
-        width: 100px;
-        height: 30px;
-        margin-left: 5px;
-        border-radius: 15px;
-}
-
-.saveHikeBtn {
-    width: 100px;
-    height: 30px;
-    margin-left: 5px;
-    border-radius: 15px;
-}
-
-.addressBtn {
-    width: 100px;
-    height: 30px;
-    margin-left: 5px;
-    border-radius: 15px;
-}
-
-/* Card Design*/
 .modal-card {
-    border-radius:15px;
-    padding: 20px;
-    background-color:#666;
-    color: #fff;
-    height: 300px;
-    width: 300px;
-}
-
- #cards {
+    background-color: #453ba1;
+    height: 400px;
+    width: 400px;
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding:15px;
-     
-} 
+};
 
-.modal-title {
-    padding:20px;
+ #card {
+    background-color: #453ba1;
+     height: 400px;
+     width: 400px;
+     display:flex;
+     
+} */
+
+/* .modal-title {
     font-size: 30px;
     font-family: "lato", sans-serif;
     line-height: 5px;
-}
+};
 
 .modal-description {
     font-size: 20px;
     font-family: "lato", sans-serif;
     line-height: 23px;
-}
+};
 
 .modal-address {
     font-size: 15px;
     font-family: "lato", sans-serif;
-}
+};
 
 .popup {
     position: fixed;
@@ -158,13 +136,13 @@ body, html{
     border: black solid 1px; 
     margin-left: -300px;
     display: none; 
-}
+};
 
 .popup button {
     margin: 5px auto;
     width: 100px;
     display: block;
-}
+};
 
 #overlay {
     position: fixed;
@@ -174,7 +152,45 @@ body, html{
     opacity: 45%;
     top: 0%;
     display: none;
+};
+
+
+ .playMusicBtn {
+    border-radius: 15px;
+    float: left;
+    margin-top: 365px;
+    margin-left: 10px;
+    
 }
 
+#saveHikeBtn {
+    border-radius: 15px;
+    float: right;
+    margin-top: 365px;
+    margin-left: 225px;
+} */
 
-/* Need Mobile styling*/
+/* #map {
+    height: 100%;
+};
+  
+.box {
+    width:250px;
+    padding-top:5px;
+    border-style:solid;
+    border-color:#336699;
+    border-width:1px;
+    padding-left:3px;
+    padding-bottom:10px;
+    word-wrap: break-word;
+};  */ 
+
+.desert {
+    background-image: url(".");
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
