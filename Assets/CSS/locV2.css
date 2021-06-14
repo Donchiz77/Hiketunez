@@ -31,4 +31,9 @@ body, html{
     background-image: url('../Images/Desert.jpg');
     min-height: 100%;
 }
+.results{
+    opacity: 0.70;
+    padding:8px;
+    
+}
 

@@ -71,3 +71,14 @@ p {
     border-radius: 15px;
     margin-top: 300px;
 }
+.mountain{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url('../Images/Mountain.jpg');
+    min-height: 100%;
+}
+
