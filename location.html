@@ -10,16 +10,16 @@
 </head>
 
 <body>
-    
-    <div class="desert">
+  <h1 class="title">HikeTunez</h1>
+    <!-- <header class="desert">
         <div class= "jtext">
             <span class="boarder">
-            <h2>HIKETUNEZ</h2>
+            HIKETUNEZ
             </span>
         </div>
-    </div>
-    <!-- <header class="jtext sec1 sec1-light boarder">HIKETUNEZ</header>
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    </header> -->
+    <header class="jtext sec1 sec1-light boarder">HIKETUNEZ</header>
+    <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -62,38 +62,39 @@
 
    
 
-    <section class="search">
+    <section class="search desert">
         <div class="locator">
-            <button id="searchPlacesBtn" style="font-family: Lato">Places</button>
-            <button id="searchParksBtn" style="font-family: Lato">Parks</button>
-            <button id="favoritesBtn" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
-            <button id="clearBtn" style="font-family: Lato">Clear</button>
+            <button id="searchPlacesBtn" class="button is-link is-rounded" style="font-family: Lato">Places</button>
+            <button id="searchParksBtn" class="button is-link is-rounded" style="font-family: Lato">Parks</button>
+            <button id="favoritesBtn" class="button is-success is-rounded" onclick="window.location.href = 'savedhikes.html';" style="font-family: Lato">Saved Hikes</button>
+            <button id="clearBtn" class= "button is-danger is-rounded" style="font-family: Lato">Clear</button>
         </div>
     </section>
 
-    <section class="results section is-medium">
+    <section class="results section is-medium jtext desert">
         <!-- card is the container -->
         <!-- infoCard is the element-->
-            <div class="card" id="cards"> 
+            <div class="card block" id="cards"> 
                     <div class="card-content">
                         <div class="content">
                         </div>
                     </div>
         </div>
     </section>
+    
     <div id="overlay"></div>
-    <div id="player-popup" class="popup">
+    <div id="player-popup" class="popup desert">
         <div id="player"></div>
-        <button onclick="closePlayerPopup()">Close</button>
+        <button class= "button is-danger is-rounded" onclick="closePlayerPopup()">Close</button>
     </div>
-    <div id="address-popup" class="popup">
+    <div id="address-popup" class="popup desert">
         <div style="width: 100%; height: 90%">
             <p id="address-line"></p> 
             <p id="city"></p>
             <p id="state"></p>
             <p id="zip"></p>
         </div>
-        <button onclick="closeAddressPopup()">Close</button>
+        <button class="button is-danger is-rounded" onclick="closeAddressPopup()" >Close</button>
     </div>
 
     
