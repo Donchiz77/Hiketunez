@@ -16,6 +16,24 @@ var hikeData = [];
 searchParksBtn.addEventListener("click", parks);
 searchPlacesBtn.addEventListener("click", places);
 
+function closeAddressPopup(){
+    $("#overlay").hide();
+    $("#address-popup").hide();
+}
+
+function showAddressPopup(address){
+    $("#address-line").html(address.line1);
+    $("#city").html(address.city);
+    $("#state").html(address.stateCode);
+    $("#zip").html(address.postalCode);
+    $("#overlay").show();
+    $("#address-popup").show();
+}
+
+
+
+
+
 function clearChildren( parent ) {
     if( parent === null ) return;
 
@@ -81,7 +99,12 @@ function displayHikes(hikes, isSavedHikes){
             var addressBtn = document.createElement("button");
             addressBtn.innerHTML = "Address";
             addressBtn.classList.add("addressBtn");
+            addressBtn.setAttribute("id", `address${i}`);
             infoCard.appendChild(addressBtn);
+            addressBtn.addEventListener("click", function(){
+                var index = this.id.substring(7);
+                showAddressPopup(hikes[index].address);
+            })
         }
         
 

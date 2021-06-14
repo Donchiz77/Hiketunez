@@ -163,12 +163,19 @@ body{
     
 }
 
-#saveHikeBtn {
-    border-radius: 15px;
-    float: right;
-    margin-top: 365px;
-    margin-left: 225px;
-} */
+#address-popup {
+    color: blanchedalmond;
+    font-size: xx-large;
+    padding: 20px;
+}
+
+#state {
+    display: inline-block;
+}
+
+#zip {
+    display: inline-block;
+}
 
 /* #map {
     height: 100%;
