@@ -56,12 +56,6 @@ body, html{
 }
 
 /* Nav Buttons */
-/* #searchParksBtn {
-    width:100px;
-    height: 30px;
-    margin-left: 5px;
-    border-radius: 15px;
-} */
 
 button {
     font-family: "lato", sans-serif;
@@ -124,12 +118,7 @@ transform: scale(1.2, 1.2);
 }
 
 
-/* #favoritesBtn {
-    width: 100px;
-    height: 30px;
-    margin-left: 5px;
-    border-radius: 15px;
-} */
+
 
 .playMusicBtn {
     width: 100px;
@@ -270,7 +259,6 @@ transform: scale(1.2, 1.2);
     align-items: center;
     justify-content: center;
     display: inline-block;
-    /* margin-right: 160px; */
     font-family:Georgia, 'Times New Roman', Times, serif;
     margin-left: 10px;
     margin-right: 10px;

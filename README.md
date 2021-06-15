@@ -8,6 +8,7 @@
 <img src="Assests/Images/seven.png">
 <img src="Assests/Images/eight.png">
 <img src="Assests/Images/nine.png">
+<img src="Assests/Images/ten.png">
 
 
 https://github.com/Donchiz77/Hiketunez
