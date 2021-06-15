@@ -6,77 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HikeTunezSavedHikes</title>
     <!--<link rel="stylesheet" href="Assets/CSS/savedhikes.css"> -->
-    <link rel="stylesheet" href="./Assets/CSS/savedhikes.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <link rel="stylesheet" href="Assets/CSS/modal.css">
+    <link rel="stylesheet" href="Assests/CSS/savedhikes.css">
 </head>
-<body class="mountain">
-    <!-- <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div> -->
-      <!-- <div class= "mountain">
-          <span class="boarder">
-          <h2>HIKETUNEZ</h2>
-          </span>
-      </div>
-  </div> -->
-  <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
-      <nav class="navbar is-fixed-top">
-      <a class="navbar-item" href="index.html" >
-        Home
-      </a>
+<body>
 
-      <a class="navbar-item" href="404.html">
-        Documentation
-      </a>
-
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More
-        </a>
-
-        <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
-          </a>
-          <hr class="navbar-divider">
-          <a class="navbar-item">
-            Report an issue
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <header class="jtext sec1 sec1-light boarder section is-medium mountain">HIKETUNEZ</header>
-    <h2 class="mountain">SAVED HIKES</h2>
-    <!-- Do you think there's a way to be able to pull the info straight from the API on this screen?
-    There should be right if we just label it the same? That way the same hike info prefills here also. -->
-    <section class="results section is-medium jtext mountain">
+    <header class="jtext sec1 sec1-light boarder">HIKETUNEZ</header>
+    <p>SAVED HIKES</p>
+    <section class="results">
         <!-- card is the container -->
         <!-- infoCard is the element-->
-            <div class="card" id="cards">
-              <div class="card-content">
-                <div class="content" >
-                </div>
-              </div> 
+            <div id="cards"> 
             </div>
         </div>
     </section>
 
-    <div id="overlayzz"></div>
+    <div id="overlay"></div>
     <div id="player-popup" class="popup">
         <div id="player"></div>
-        <button class="button is-danger is-rounded" onclick="closePlayerPopup()">Close</button>
+        <!-- <button onclick="closePlayerPopup()">Close</button> -->
     </div>
 
     <div id="address-popup" class="popup">
@@ -86,16 +33,18 @@
             <p id="state"></p>
             <p id="zip"></p>
         </div>
-        <button class="button is-danger is-rounded" onclick="closeAddressPopup()">Close</button>
+        <button style="hidden" onclick="closeAddressPopup()">Close</button>
     </div>
-
 
     <section class="address">
         <div class="modal-address"></div>
     </section>
+   
+    
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="Assets/script/script.js"></script>
-    <script src="Assets/script/player.js"></script>
-    <script src="Assets/script/savedhikes.js"></script>
+    <script src="Assests/Script/script.js"></script>
+    <script src="Assests/Script/player.js"></script>
+    <script src="Assests/Script/savedhikes.js"></script>
+   
 </body>
 </html>

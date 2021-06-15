@@ -1,0 +1,246 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    font-size: 25px;
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color: rgb(247, 245, 245);
+    background-color: #666;
+};
+
+/*Header*/
+
+.jtext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+
+.sec1{
+    text-align: center;
+    padding: 50px 80px;   
+   }
+   
+   .sec1-light{
+     background-color: #f4f4f4;
+     color: #666;  
+   }
+
+   .jtext .boarder{
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
+
+p {
+    color:#fff;
+    font-family: "lato", sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#cards {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:15px;
+} 
+
+
+.modal-card {
+    border-radius:15px;
+    padding: 20px;
+    background-color:#666;
+    color: #fff;
+    height: 300px;
+    width: 300px;
+   
+}
+
+.modal-title {
+    padding:20px;
+    font-size: 30px;
+    font-family: "lato", sans-serif;
+    line-height: 5px;
+}
+
+.modal-description {
+    font-size: 20px;
+    font-family: "lato", sans-serif;
+    line-height: 23px;
+}
+
+.modal-address {
+    font-size: 15px;
+    font-family: "lato", sans-serif;
+}
+
+/* Play Music Btn */
+.playMusicBtn {
+    font-family: "lato", sans-serif;
+    font-size: 16px;
+    position: relative;
+    color: rgb(90, 88, 88);
+    width: 100px;
+    height: 40px;
+    transition: all 0.3s;
+    margin-left: 15px;
+}
+      
+      
+.playMusicBtn::before, .playMusicBtn::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+    
+.playMusicBtn:hover span {
+transform: scale(1.2, 1.2);
+}
+      
+.playMusicBtn::before {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.1, 0.1);
+}
+      
+.playMusicBtn:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+      
+.playMusicBtn::after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+      
+.playMusicBtn:hover::after {
+    transform: scale(0, 0);
+    opacity: 0;
+}
+
+/* Clear Hike */
+
+
+.clearHikeBtn {
+    font-family: "lato", sans-serif;
+    font-size: 16px;
+    position: relative;
+    color: rgb(90, 88, 88);
+    width: 100px;
+    height: 40px;
+    transition: all 0.3s;
+    margin-left: 15px;
+}
+      
+      
+.clearHikeBtn::before, .clearHikeBtn::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+    
+.clearHikeBtn:hover span {
+transform: scale(1.2, 1.2);
+}
+      
+.clearHikeBtn::before {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.1, 0.1);
+}
+      
+.clearHikeBtn:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+      
+.clearHikeBtn::after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+      
+.clearHikeBtn:hover::after {
+    transform: scale(0, 0);
+    opacity: 0;
+}
+
+/* Address Btn */
+
+.addressBtn {
+    font-family: "lato", sans-serif;
+    font-size: 16px;
+    position: relative;
+    color: rgb(90, 88, 88);
+    width: 100px;
+    height: 40px;
+    transition: all 0.3s;
+    margin-left: 15px;
+}
+      
+      
+.addressBtn::before, .addressBtn::after {
+    content: '';
+    position: absolute;
+    transition: all 0.3s;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+    
+.addressBtn:hover span {
+transform: scale(1.2, 1.2);
+}
+      
+.addressBtn::before {
+    opacity: 0;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0.1, 0.1);
+}
+      
+.addressBtn:hover::before {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+      
+.addressBtn::after {
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+      
+.addressBtn:hover::after {
+    transform: scale(0, 0);
+    opacity: 0;
+}
+
+@media(max-width:568px){
+    body, div, html {
+        background-attachment: scroll;
+    }
+}
+
+@media(max-width:768px){
+    body, div, html {
+        background-attachment: scroll;
+    }
+}
