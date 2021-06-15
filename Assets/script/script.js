@@ -100,10 +100,8 @@ function displayHikes(hikes, isSavedHikes){
     }
 }
 
-function clear() {
-  var myObj = document.getElementById("modal-card");
-  myObj.remove();
-}
+
+
 
 
 //this is the function for parks
