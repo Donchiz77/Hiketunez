@@ -11,7 +11,7 @@ body, html{
 
 /*Header*/
 
-/* .jtext{
+.jtext{
     position: absolute;
     top: 50%;
     width: 100%;
@@ -20,32 +20,32 @@ body, html{
     font-size: 27px;
     letter-spacing: 8px;
     text-transform: uppercase;
-} */
+}
 
-/* .sec1{
+.sec1{
     text-align: center;
     padding: 50px 80px;   
-   } */
+   }
    
-/* .sec1-light{
+   .sec1-light{
      background-color: #f4f4f4;
      color: #666;  
-   } */
+   }
 
-/* .jtext .boarder{
+   .jtext .boarder{
     background-color: #111;
     color: #fff;
     padding: 20px;
-} */
+}
 
 
-/* p {
+p {
     color:#fff;
     font-family: "lato", sans-serif;
     display:flex;
     align-items: center;
     justify-content:center;
-} */
+}
 
 .savedHikes {
     display: flex;
@@ -56,29 +56,15 @@ body, html{
 }
 
 .modal-card {
-    display: flex;
-    flex-wrap: wrap;
      background-color: #f4f4f4;
-     padding: 20px;
-     margin: 30px;
      height: 400px;
      width: 400px;
      display:flex;
-    
+     justify-content: center;
+     align-items: center;
 }
 
 .playMusicBtn {
     border-radius: 15px;
     margin-top: 300px;
 }
-.mountain{
-    position: relative;
-    opacity: 0.70;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-image: url('../Images/Mountain.jpg');
-    min-height: 100%;
-}
-

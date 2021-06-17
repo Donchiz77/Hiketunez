@@ -32,8 +32,7 @@ function showAddressPopup(address){
 
 
 
-// Walk the DOM hierarchy removing all children elements
-// If there is no parent object, function will do nothing.
+
 
 function clearChildren( parent ) {
     if( parent === null ) return;
@@ -46,19 +45,13 @@ function clearChildren( parent ) {
     }
 }
 
-
-// Creates elements for each hike object in the array "hikes".  Parameter
-// isSavedHikes gives hint to function on whether to create clear hikes 
-// button used by savedhikes html page; otherwise savedhike button will
-// be created, which is used by location.html
-
 function displayHikes(hikes, isSavedHikes){
     clearChildren(cards);
     for (i = 0; i < hikes.length; i++) {
         //Building Card
         var infoCard = document.createElement("div");
         infoCard.setAttribute("id", `card${i}`);
-        infoCard.setAttribute("class", "cards");
+        infoCard.setAttribute("class", "modal-card");
         cards.appendChild(infoCard);
 
         var title = document.createElement("h1");
@@ -68,8 +61,8 @@ function displayHikes(hikes, isSavedHikes){
         var listingDescription = document.createElement("p");
         listingDescription.textContent = hikes[i].description;
         infoCard.appendChild(listingDescription);
-        title.classList.add("cards");
-        listingDescription.classList.add("cards");
+        title.classList.add("modal-title");
+        listingDescription.classList.add("modal-description");
 
         //Buttons
         var playMusicBtn = document.createElement("button");
@@ -118,8 +111,7 @@ function displayHikes(hikes, isSavedHikes){
         playMusicBtn.addEventListener("click", function () {
             $.get("https://openwhyd.org/adrien/playlist/61/?format=links").done(function (
                 data
-            ) { //split function being used on data array to convert string into array
-                //turning data from API call into data format we could use
+            ) {
                 playPlaylist(data.split("\n"));
             });
         });
