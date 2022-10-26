@@ -23,4 +23,4 @@ Technologies Used: HTML, CSS, JavaScript
 
 License: MIT
 
-Contact Information: DAUPHINEBURNS@GMAIL.COM
+Contact Information: Don.chisolm@gmail.com
