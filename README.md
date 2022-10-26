@@ -23,4 +23,4 @@ Technologies Used: HTML, CSS, JavaScript
 
 License: MIT
 
-Contact Information: Don.chisolm@gmail.com
+Contact Information: Don.chisolm14@gmail.com
